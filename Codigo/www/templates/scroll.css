@@ -1,0 +1,161 @@
+
+/* SCROLL - Início */
+
+.scroll-down{
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-down2{
+    position: absolute;
+    bottom: -55rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mouse{
+    width: 1.5rem;
+    height: 3rem;
+    border: 2px solid black;
+    border-radius: 2rem;
+    margin-bottom: .5rem;
+    display: flex;
+}
+
+.mouse span{
+    width: .5rem;
+    height: .5rem;
+    background: black;
+    display: block;
+    border-radius: 50%;
+    margin: auto;
+    animation: move-wheel 1s linear infinite;
+}
+
+.arrow span{
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    border: 2px solid transparent;
+    border-right-color: black;
+    border-bottom-color: black;
+    transform: rotate(45deg);
+    animation: arrow-down .5s alternate infinite;
+}
+
+@keyframes move-wheel{
+    0%{
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(1rem);
+    }
+}
+
+@keyframes arrow-down{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: .25;
+    }
+    50%{
+        opacity: .5;
+    }
+    75%{
+        opacity: .75;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-down{
+        bottom: 1.5rem;
+    }
+    .scroll-down2{
+        bottom: -51rem
+    }
+}
+/* SCROLL - Fim */
+
+
+/* RESPONSIVIDADE */
+
+/* Moto G4 */
+@media screen and (min-height: 640px) {
+    .scroll-down2,
+    .scroll-down{
+        display: none;
+    }
+}
+/* Pixel 2 */
+@media screen and (min-height: 731px) {
+    .scroll-down2,
+    .scroll-down{
+        display: none;
+    }
+}
+/* Pixel 2 XL */
+@media screen and (min-height: 823px) {
+    .scroll-down2,
+    .scroll-down{
+        display: none;
+    }
+}
+/* Iphone 5/SE */
+@media screen and (min-height: 568px) {
+    .scroll-down2,
+    .scroll-down{
+        display: none;
+    }
+}
+/* Ipad*/
+@media screen and (min-height: 1024px) {
+    .scroll-down,
+    .scroll-down2{
+        display: flex;
+    }
+    .scroll-down2{
+        bottom: -63rem 
+    }
+}
+/* Ipad PRO */
+@media screen and (min-height: 1365px) {
+    .scroll-down2{
+        display: none;
+    }
+
+}
+@media screen and (min-height: 1024px) {
+    .scroll-down,
+    .scroll-down2{
+        display: flex;
+    }
+    .scroll-down2{
+        bottom: -63rem 
+    }
+}
+@media screen and (min-height: 860px) and (min-width: 1000px) {
+    .scroll-down,
+    .scroll-down2{
+        display: flex;
+    }
+    .scroll-down2{
+        bottom: -50rem 
+    }
+    .scroll-down{
+        bottom: 3rem;
+    }
+}

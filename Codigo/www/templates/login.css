@@ -1,0 +1,113 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    width: 400px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #464E47;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.box h1{
+    color: #F1FFFA;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.box input[type = "text"],.box input[type = "password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: #F1FFFA;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+    width: 280px;
+    border-color: #2ecc71;
+}
+
+.box button[type = "submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.container a{
+    text-decoration: none;
+}
+
+.box button[type = "submit"]:hover{
+    background: #2ecc71;
+}
+
+/* RESPONSIVIDADE */
+
+/* Moto G4 */
+@media screen and (min-height: 640px) {
+    .box{
+        top: 70%;
+        width: 300px;
+    }
+}
+/* Pixel 2 */
+@media screen and (min-height: 731px) {
+    .box{
+        top: 60%;
+        width: 300px;
+    }
+}
+/* Pixel 2 XL */
+@media screen and (min-height: 823px) {
+    .box{
+        top: 55%;
+    }
+}
+/* Iphone 5/SE */
+@media screen and (min-height: 568px) {
+    .box{
+        top: 75%;
+        width: 300px
+    }
+}
+/* Iphone 5/SE */
+@media screen and (min-height: 667px) {
+    .box{
+        top: 66%;
+    }
+}
+@media screen and (min-height: 1365px) {
+    .box{
+        width: 600px;
+        top: 30%;
+    }
+
+}
+@media screen and (min-height: 860px) and (min-width: 1000px) {
+    .box{
+        width: 400px;
+        top: 50%;
+    }
+}

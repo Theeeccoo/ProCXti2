@@ -1,0 +1,426 @@
+/* ROOT */
+:root{
+    --mint-cream: #F1FFFA;
+    --tea-green: #CCFCCB;
+    --celadon: #96E6B3;
+    -middle-green: #568259;
+    --ebony: #464E47;
+    --cinza-escuro: #353839;
+}
+
+
+/* GLOBAL */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: var(--mint-cream);
+}
+
+/* NAVBAR - Início */
+
+.container-navbar{
+    background: var(--celadon);
+    font-weight: normal;
+}
+
+.navbar{
+    background: var(--celadon);
+}
+
+.nav-link:hover{
+    background: var(--tea-green);
+    color: black;
+}
+
+.nav-link a:focus{
+    color: var(--cinza-escuro);
+}
+
+.navbar-nav .active{
+    border-bottom: 2px solid brown;
+}
+
+.container-fluid .navbar-brand{
+    margin-right: 25%;
+    padding: 20px;
+    color: var(--tea-green);
+    text-decoration: none;
+    background: var(--ebony);
+}
+.container-fluid .navbar-brand:hover{
+    color: var(--tea-green);
+}
+
+.nav-link, .nav-link a{
+    padding: 10px;
+    color: var(--cinza-escuro);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+/* NAVBAR - Fim */
+
+/* CONTEÚDO - Início */
+
+/* Conteúdo: Procrastinação */
+
+.conteudoProc{
+    height: calc(100vh - 86px);
+    background-image: url(../images/3433814.jpg);
+}
+
+.titulo{
+    width: 6em;
+    margin: 10% auto;
+    font-weight: bold;
+}
+
+.texto{
+    border-right: 1px solid black;
+    font-size: 5rem;
+}
+
+.separador{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .texto{
+        border-right: none;
+        font-size: .8rem;
+    }
+    .separador{
+        display: inline;
+        
+    }
+    .img{
+        margin-left: 10%;
+        width: 80%;
+    }
+}
+
+/* Conteúdo: Solução */
+
+.conteudoSolucao{
+    height: 100vh;
+    background: #d5e0dd;
+}
+
+.conteudoSolucao h1 {
+    width: 10em;
+    margin: 5% auto;
+    font-weight: bold;
+}
+
+.textoDireita{
+    border-left: 1px solid black;
+    font-size: 5rem;
+}
+
+@media screen and (max-width: 990px) {
+    .imgEsquerda{
+        display: none;
+    }
+    .textoDireita{
+        border-left: none;
+        font-size: .8rem;
+    }
+    .texto{
+        border-right: none;
+    }
+}
+
+/* Conteúdo: Final */
+
+.conteudoFinal{
+    height: calc(100vh - 86px);
+    background-image: url(../images/3433814.jpg);
+}
+
+.conteudoFinal h2{
+    margin-top: 20%;
+    font-weight: bold; 
+    text-align: center;
+    font-size: 3rem;
+}
+
+.btnModal{
+    position: absolute;
+    padding: 1em 1.5em;
+    background: var(--celadon);
+    text-decoration: none;
+    color: var(--cinza-escuro);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+}
+.btnModal:hover{
+    color: black;
+    background: #436446;
+}
+
+/* CONTEÚDO - Fim */
+
+/* MODAL CADASTRO - Início */
+.popup-overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.popup{
+    position: absolute;
+    top: -150%; /* 250% */
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.15);
+    width: 300px;
+    height: 340px;
+    background: #f5f5f5;
+    z-index: 2;
+    box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+body.showLoginForm .popup-overlay{
+    display: block;
+}
+body.showLoginForm .popup{
+    top: 250%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup .popup-close{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: #555;
+    color: #f5f5f5;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup .form .header{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    margin: 20px 0px;
+}
+
+.popup .form .element{
+    padding: 8px 20px;
+}
+
+.popup .form .element label{
+    display: blcok;
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.popup .form .element input{
+    width: 100%;
+    padding: 8px 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    background: #eee;
+    border-radius: 5px;
+}
+
+.popup .form .element button{
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #4889da;
+    color: #f5f5f5;
+}
+/* MODAL CADASTRO - Fim */
+
+/* FOOTER - Início */
+
+.footer{
+    width: 99.4vw;
+    height: 86px;
+    background: var(--ebony);
+ 
+}
+
+.textoFooter{
+    width: 100%;
+    margin-top: 2.5%;
+    color: #F1FFFA;
+    /* padding: 0 20%; */
+
+}
+
+.textoFooter p{
+    text-align: center;
+}
+/* FOOTER - Fim */
+
+
+
+/* RESPONSIVIDADE */
+
+/* Moto G4 */
+@media screen and (min-height: 640px) {
+    .texto{
+        font-size: .9rem;
+    }
+    .textoDireita{
+        font-size: .9rem;
+    }
+    .btnModal{
+        padding: .5em .5em;
+    }
+}
+/* Pixel 2 */
+@media screen and (min-height: 731px) {
+    .texto{
+        font-size: 1rem;
+    }
+    .textoDireita{
+        font-size: 1rem;
+    }
+    .btnModal{
+        padding: .6em .6em;
+    }
+}
+/* Pixel 2 XL */
+@media screen and (min-height: 822px) {
+    .texto{
+        font-size: 2rem;
+    }
+    .textoDireita{
+        font-size: 1.1rem;
+    }
+    .btnModal{
+        padding: .5em .5em;
+    }
+}
+/* Iphone 5/SE */
+@media screen and (min-height: 568px) {
+    .conteudoSolucao{
+        height: 110vh;
+    }
+    .btnModal{
+        padding: .3em .3em;
+    }
+    .conteudoFinal h2{
+        font-size: 2rem;
+    }
+}
+/* Iphone 6/7/8 */
+@media screen and (min-height: 667px) {
+    .textoDireita{
+        font-size: .9rem;
+    }
+    .texto{
+        font-size: .9rem;
+    }
+    .conteudoSolucao{
+        height: 100vh;
+    }
+    .btnModal{
+        padding: .5em .5em;
+    }
+}
+/* Iphone 6/7/8 PLUS*/
+@media screen and (min-height: 736px) {
+    .textoDireita{
+        font-size: 1rem;
+    }
+    .texto{
+        font-size: 1rem;
+    }
+    .conteudoSolucao{
+        height: 100vh;
+    }
+    .btnModal{
+        padding: .5em .5em;
+    }
+}
+/* Ipad*/
+@media screen and (min-height: 1024px) {
+    .textoDireita{
+        font-size: 1.3rem;
+    }
+    .texto{
+        font-size: 1.3rem;
+    }
+    .conteudoSolucao{
+        height: 100vh;
+    }
+    .btnModal{
+        padding: 1em 1em;
+    }
+    .conteudoSolucao h1{
+        font-size: 2.5rem;
+    }
+    .conteudoFinal h2{
+        font-size: 4rem;
+    }
+    .popup{
+        width: 400px;
+        height: 400px;
+    }
+}
+/* Ipad*/
+@media screen and (min-height: 1366px) {
+    .textoDireita{
+        font-size: 1.5rem;
+    }
+    .texto{
+        font-size: 1.8rem;
+    }
+    .conteudoSolucao{
+        height: 100vh;
+    }
+    .btnModal{
+        padding: 1em 1em;
+    }
+    .conteudoSolucao h1{
+        font-size: 2.5rem;
+    }
+    .conteudoFinal h2{
+        font-size: 5rem;
+    }
+    .popup{
+        width: 600px;
+    }
+    .popup .form .element label{
+        font-size: 2rem;
+    }
+    .popup .form .element input{
+        font-size: 2rem;
+    }
+    .popup .form .element button{
+        font-size: 1.5rem;
+    }
+
+}
