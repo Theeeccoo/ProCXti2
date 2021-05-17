@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
 }
-
+/* 
 .scroll-down2{
     position: absolute;
     bottom: -55rem;
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 .mouse{
     width: 1.5rem;
@@ -92,70 +92,8 @@
 
 
 /* RESPONSIVIDADE */
-
-/* Moto G4 */
-@media screen and (min-height: 640px) {
-    .scroll-down2,
+@media screen and (max-width: 992px) {
     .scroll-down{
         display: none;
-    }
-}
-/* Pixel 2 */
-@media screen and (min-height: 731px) {
-    .scroll-down2,
-    .scroll-down{
-        display: none;
-    }
-}
-/* Pixel 2 XL */
-@media screen and (min-height: 823px) {
-    .scroll-down2,
-    .scroll-down{
-        display: none;
-    }
-}
-/* Iphone 5/SE */
-@media screen and (min-height: 568px) {
-    .scroll-down2,
-    .scroll-down{
-        display: none;
-    }
-}
-/* Ipad*/
-@media screen and (min-height: 1024px) {
-    .scroll-down,
-    .scroll-down2{
-        display: flex;
-    }
-    .scroll-down2{
-        bottom: -63rem 
-    }
-}
-/* Ipad PRO */
-@media screen and (min-height: 1365px) {
-    .scroll-down2{
-        display: none;
-    }
-
-}
-@media screen and (min-height: 1024px) {
-    .scroll-down,
-    .scroll-down2{
-        display: flex;
-    }
-    .scroll-down2{
-        bottom: -63rem 
-    }
-}
-@media screen and (min-height: 860px) and (min-width: 1000px) {
-    .scroll-down,
-    .scroll-down2{
-        display: flex;
-    }
-    .scroll-down2{
-        bottom: -50rem 
-    }
-    .scroll-down{
-        bottom: 3rem;
     }
 }

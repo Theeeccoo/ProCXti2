@@ -26,10 +26,17 @@ body{
 .container-navbar{
     background: var(--celadon);
     font-weight: normal;
+    justify-content: space-between;
 }
 
 .navbar{
     background: var(--celadon);
+    display: flex;
+    justify-content: center;
+}
+
+.ologin{
+    margin-left: 150px;
 }
 
 .nav-link:hover{
@@ -48,7 +55,7 @@ body{
 .container-fluid .navbar-brand{
     margin-right: 25%;
     padding: 20px;
-    color: var(--tea-green);
+    color: var(--tea-green) !important;
     text-decoration: none;
     background: var(--ebony);
 }
@@ -74,34 +81,34 @@ body{
     background-image: url(../images/3433814.jpg);
 }
 
+.tituloCima{
+    display: flex;
+    justify-content: center;
+}
+
 .titulo{
-    width: 6em;
-    margin: 10% auto;
+    margin: 5% 0;
     font-weight: bold;
 }
 
+
+.divAcima{
+    display: flex;
+    justify-content: center;
+}
+
+.acima{
+    display: flex;
+    justify-content: center;
+}
+
 .texto{
+    font-size: 1.5rem;
     border-right: 1px solid black;
-    font-size: 5rem;
 }
 
 .separador{
     display: none;
-}
-
-@media screen and (max-width: 768px) {
-    .texto{
-        border-right: none;
-        font-size: .8rem;
-    }
-    .separador{
-        display: inline;
-        
-    }
-    .img{
-        margin-left: 10%;
-        width: 80%;
-    }
 }
 
 /* Conteúdo: Solução */
@@ -111,29 +118,11 @@ body{
     background: #d5e0dd;
 }
 
-.conteudoSolucao h1 {
-    width: 10em;
-    margin: 5% auto;
-    font-weight: bold;
-}
-
 .textoDireita{
     border-left: 1px solid black;
-    font-size: 5rem;
+    font-size: 1.5rem;
 }
 
-@media screen and (max-width: 990px) {
-    .imgEsquerda{
-        display: none;
-    }
-    .textoDireita{
-        border-left: none;
-        font-size: .8rem;
-    }
-    .texto{
-        border-right: none;
-    }
-}
 
 /* Conteúdo: Final */
 
@@ -146,8 +135,9 @@ body{
     margin-top: 20%;
     font-weight: bold; 
     text-align: center;
-    font-size: 3rem;
+    font-size: 5rem;
 }
+
 
 .btnModal{
     position: absolute;
@@ -202,6 +192,16 @@ body.showLoginForm .popup{
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
+
+body.showLoginForm2 .popup-overlay{
+    display: block;
+}
+body.showLoginForm2 .popup{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 
 .popup .popup-close{
     position: absolute;
@@ -286,141 +286,92 @@ body.showLoginForm .popup{
 
 
 /* RESPONSIVIDADE */
-
-/* Moto G4 */
-@media screen and (min-height: 640px) {
-    .texto{
-        font-size: .9rem;
-    }
-    .textoDireita{
-        font-size: .9rem;
-    }
-    .btnModal{
-        padding: .5em .5em;
-    }
-}
-/* Pixel 2 */
-@media screen and (min-height: 731px) {
-    .texto{
-        font-size: 1rem;
-    }
-    .textoDireita{
-        font-size: 1rem;
-    }
-    .btnModal{
-        padding: .6em .6em;
-    }
-}
-/* Pixel 2 XL */
-@media screen and (min-height: 822px) {
-    .texto{
-        font-size: 2rem;
-    }
-    .textoDireita{
-        font-size: 1.1rem;
-    }
-    .btnModal{
-        padding: .5em .5em;
-    }
-}
-/* Iphone 5/SE */
-@media screen and (min-height: 568px) {
-    .conteudoSolucao{
-        height: 110vh;
-    }
-    .btnModal{
-        padding: .3em .3em;
-    }
-    .conteudoFinal h2{
-        font-size: 2rem;
-    }
-}
-/* Iphone 6/7/8 */
-@media screen and (min-height: 667px) {
-    .textoDireita{
-        font-size: .9rem;
-    }
-    .texto{
-        font-size: .9rem;
-    }
-    .conteudoSolucao{
-        height: 100vh;
-    }
-    .btnModal{
-        padding: .5em .5em;
-    }
-}
-/* Iphone 6/7/8 PLUS*/
-@media screen and (min-height: 736px) {
-    .textoDireita{
-        font-size: 1rem;
-    }
-    .texto{
-        font-size: 1rem;
-    }
-    .conteudoSolucao{
-        height: 100vh;
-    }
-    .btnModal{
-        padding: .5em .5em;
-    }
-}
-/* Ipad*/
-@media screen and (min-height: 1024px) {
-    .textoDireita{
-        font-size: 1.3rem;
-    }
+@media screen and (max-width: 1440px) {
     .texto{
         font-size: 1.3rem;
     }
-    .conteudoSolucao{
-        height: 100vh;
-    }
-    .btnModal{
-        padding: 1em 1em;
-    }
-    .conteudoSolucao h1{
-        font-size: 2.5rem;
-    }
-    .conteudoFinal h2{
-        font-size: 4rem;
-    }
-    .popup{
-        width: 400px;
-        height: 400px;
+    .textoDireita{
+        font-size: 1.3rem;
     }
 }
-/* Ipad*/
-@media screen and (min-height: 1366px) {
+
+@media screen and (max-width: 1200px) {
+    .conteudoFinal h2{
+        font-size: 3.5rem;
+    }
+    .btnModal{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 991px) {
+    .texto{
+        border-right: none;
+        font-size: 1.3rem;
+    }
+    .textoDireita{
+        border: none;
+    }
+    .imgEsquerda{
+        display: none;
+    }
+    .separador{
+        display: inline;
+        
+    }
+    .img{
+        width: 80%;
+    }
+    .conteudoFinal h2{
+        font-size: 3rem;
+    }
+    .btnModal{
+        font-size: 1.2rem;
+    }
+    .ologin{
+        margin: 0;
+    }
+    
+}
+
+
+@media screen and (max-width: 780px) and (max-height: 1024px) {
+    .texto{
+        font-size: 1.5rem;
+    }
     .textoDireita{
         font-size: 1.5rem;
     }
+}
+@media screen and (max-width: 540px) and (max-height: 720px) {
     .texto{
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
-    .conteudoSolucao{
-        height: 100vh;
+    .textoDireita{
+        font-size: 1rem;
     }
-    .btnModal{
-        padding: 1em 1em;
-    }
-    .conteudoSolucao h1{
+}
+
+@media screen and (max-width: 530px) {
+    .conteudoFinal h2{
         font-size: 2.5rem;
     }
-    .conteudoFinal h2{
-        font-size: 5rem;
+    .textoDireita{
+        font-size: 1.2rem;
     }
-    .popup{
-        width: 600px;
+}
+@media screen and (max-width: 440px) {
+    .texto{
+        font-size: 1rem;
     }
-    .popup .form .element label{
-        font-size: 2rem;
+    .acima p{
+        font-size: 1rem;
     }
-    .popup .form .element input{
-        font-size: 2rem;
+    .textoDireita{
+        font-size: 1rem;
     }
-    .popup .form .element button{
-        font-size: 1.5rem;
+}
+@media screen and (max-width: 320px) and (max-height: 653px) {
+    .conteudoSolucao{
+        height: 680px;
     }
-
 }

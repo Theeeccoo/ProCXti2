@@ -38,7 +38,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">ProCX</a>
+            <a class="navbar-brand" href="./index.html">ProCX</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -52,9 +52,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                 <a class="nav-link" href="./login.html">Perfil</a>
-                <a class="nav-link" href="./contato.html">Quem somos</a>
+                <a class="nav-link" href="./contato.html">Equipe</a>
+                <a class="nav-link ologin" href="./login.html">Login</a>
+                <a class="nav-link" onclick="openLoginForm2()" href="#">Cadastrar</a>
               </div>
             </div>
           </div>
@@ -67,12 +69,12 @@
     <div class="conteudoProc">
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 tituloCima">
             <h1 class="titulo">Procrastinar</h1>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-6 texto">
+        <div class="row acima">
+          <div class="col-12 col-lg-6 texto">
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore
               amet reprehenderit, inventore rem sapiente optio accusamus hic.
@@ -83,7 +85,7 @@
             </p>
           </div>
           <hr class="separador" />
-          <div class="col-sm-12 col-md-5 img">
+          <div class="col-12 col-lg-5 img">
             <img
               src="../www/images/localDistrator.jpg"
               class="img-fluid"
@@ -110,23 +112,21 @@
     <div class="conteudoSolucao">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h1>Nossa Solução</h1>
+          <div class="col-12 tituloCima">
+            <h1 class="titulo">Nossa Solução</h1>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-6 texto">
+        <div class="row divAcima">
+          <div class="col-12 col-lg-6 texto">
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui
-              nihil fugiat ex impedit sunt. Soluta error beatae officiis, modi
-              quos cumque sequi ea hic! Commodi sed, voluptas voluptates
-              molestias libero pariatur minus asperiores velit, recusandae modi
-              cupiditate tempora corporis harum aspernatur perspiciatis
-              molestiae, eos dolore sint soluta nesciunt. Itaque, aspernatur!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus deleniti sunt ducimus aliquam delectus officia, illo
+              nulla? Numquam aliquid necessitatibus, optio, vero temporibus
+              magnam excepturi eaque, alias suscipit nemo mollitia!
             </p>
           </div>
           <div
-            class="col-sm-12 col-md-4 img"
+            class="col-12 col-lg-5 img"
             data-aos="fade-up-right"
             data-aos-duration="4000"
           >
@@ -139,9 +139,9 @@
           </div>
         </div>
         <hr />
-        <div class="row">
+        <div class="row divAcima">
           <div
-            class="col-sm-12 col-md-4 imgEsquerda"
+            class="col-12 col-lg-4 imgEsquerda"
             data-aos="fade-up-right"
             data-aos-duration="4000"
           >
@@ -152,27 +152,15 @@
               title="Imagem gratuita retirada do site pexels.com"
             />
           </div>
-          <div class="col-sm-12 col-md-6 textoDireita">
+          <div class="col-12 col-lg-6 textoDireita">
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui
-              nihil fugiat ex impedit sunt. Soluta error beatae officiis, modi
-              quos cumque sequi ea hic! Commodi sed, voluptas voluptates
-              molestias libero pariatur minus asperiores velit, recusandae modi
-              cupiditate tempora corporis harum aspernatur perspiciatis
-              molestiae, eos dolore sint soluta nesciunt. Itaque, aspernatur!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus deleniti sunt ducimus aliquam delectus officia, illo
+              nulla? Numquam aliquid necessitatibus, optio, vero temporibus
+              magnam excepturi eaque, alias suscipit nemo mollitia!
             </p>
           </div>
         </div>
-      </div>
-      <div class="hero">
-        <a href="#" class="scroll-down2">
-          <div class="mouse">
-            <span></span>
-          </div>
-          <div class="arrow">
-            <span></span>
-          </div>
-        </a>
       </div>
     </div>
     <!-- CONTEÚDO Solução - Fim -->
@@ -198,7 +186,7 @@
     <div class="popup">
       <div class="popup-close" onclick="closeLoginForm()">&times;</div>
       <div class="form">
-        <div class="header">Cadastrar</div>
+        <div class="header">Cadastro</div>
         <div class="element">
           <label for="email">Email</label>
           <input type="text" id="email" />
@@ -208,7 +196,7 @@
           <input type="password" id="senha" />
         </div>
         <div class="element">
-          <a href="./login.html"><button>Login</button></a>
+          <a href="./login.html"><button>Cadastrar</button></a>
         </div>
       </div>
     </div>
