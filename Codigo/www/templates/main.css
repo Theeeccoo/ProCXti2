@@ -176,12 +176,21 @@ body{
     top: -150%; /* 250% */
     left: 50%;
     transform: translate(-50%, -50%) scale(1.15);
-    width: 300px;
-    height: 340px;
+    width: 500px;
+    height: 540px;
     background: #f5f5f5;
     z-index: 2;
     box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
     transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.selecao{
+    display: inline-block;
+}
+
+.selector{
+    display: block;
+    width: 190px;
 }
 
 body.showLoginForm .popup-overlay{

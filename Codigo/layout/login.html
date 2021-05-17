@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../www/templates/main.css" />
     <link rel="stylesheet" href="../www/templates/login.css" />
     <!-- SCRIPT ORIGINAL -->
-
+    <script src="../www/templates/index.js"></script>
     <!-- IMPORTANDO FONTE -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -51,10 +51,9 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
                 <a class="nav-link" href="./index.html">Home</a>
-                <a class="nav-link active" aria-current="page" href="#"
-                  >Perfil</a
-                >
                 <a class="nav-link" href="./contato.html">Equipe</a>
+                <a class="nav-link ologin active" aria-current="page" href="./login.html">Login</a>
+                <a class="nav-link" onclick="openLoginForm2()" href="#">Cadastrar</a>
               </div>
             </div>
           </div>
@@ -75,6 +74,43 @@
       </div>
     </div>
     <!-- TELA LOGIN - Fim -->
-
+    <!-- Modal Cadastro - Início -->
+    <div class="popup-overlay"></div>
+    <div class="popup">
+      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+      <div class="form">
+        <div class="header">Cadastro</div>
+        <div class="element">
+          <label for="senha">Nome</label>
+          <input type="#" id="#" />
+        </div>
+        <div class="element">
+          <label for="email">Email</label>
+          <input type="text" id="email" />
+        </div>
+        <div class="element">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" />
+        </div>
+        <div class="element selecao">
+          <label for="selecao">UF</label>
+          <select name="#" id="#" class="selector">
+            <option value="#" id="selecao">Roger</option>
+            <option value="#" id="selecao">Roger</option>
+          </select>
+        </div>
+        <div class="element selecao">  
+          <label for="selecao">Cidade</label>
+          <select name="#" id="#" class="selector">
+            <option value="#" id="selecao">Roger2</option>
+            <option value="#" id="selecao">Roger2</option>
+          </select>
+        </div>  
+        <div class="element">
+          <a href="./login.html"><button>Cadastrar</button></a>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Cadastro - Fim -->
   </body>
 </html>
