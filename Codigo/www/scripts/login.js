@@ -19,7 +19,7 @@ if(Email == ''|| Senha == ''){
 
     const users = JSON.parse(window.localStorage.getItem("users"));
 
-   
+   if(users != null){
     users.map(user =>{
     if(user.email == Email && user.senha == Senha){
         localStorage.setItem('SessionID',JSON.stringify(user.id));
@@ -29,6 +29,7 @@ if(Email == ''|| Senha == ''){
     }
 
    })
+  }
    const SessionID = JSON.parse(window.localStorage.getItem("SessionID"));
   
   if(SessionID == null){
