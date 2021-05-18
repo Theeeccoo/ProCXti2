@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="../www/templates/main.css" />
     <link rel="stylesheet" href="../www/templates/team.css" />
     <!-- SCRIPT ORIGINAL -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="../www/templates/index.js"></script>
     <!-- IMPORTANDO FONTE -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -74,24 +75,7 @@
 
 
       <!-- Modal Cadastro - Início -->
-      <div class="popup-overlay"></div>
-      <div class="popup">
-        <div class="popup-close" onclick="closeLoginForm()">&times;</div>
-        <div class="form">
-          <div class="header">Cadastro</div>
-          <div class="element">
-            <label for="email">Email</label>
-            <input type="text" id="email" />
-          </div>
-          <div class="element">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" />
-          </div>
-          <div class="element">
-            <a href="./login.html"><button>Cadastrar</button></a>
-          </div>
-        </div>
-      </div>
+     
       <!-- Modal Cadastro - Fim -->
     <!-- Team -->
     <section id="team" class="pb-5">
@@ -389,32 +373,31 @@
         <div class="header">Cadastro</div>
         <div class="element">
           <label for="senha">Nome</label>
-          <input type="#" id="#" />
+          <input type="text" id="txt_nome" />
         </div>
         <div class="element">
           <label for="email">Email</label>
-          <input type="text" id="email" />
+          <input type="text" id="txt_email" />
         </div>
         <div class="element">
           <label for="senha">Senha</label>
-          <input type="password" id="senha" />
+          <input type="password" id="txt_senha" />
         </div>
         <div class="element selecao">
           <label for="#">UF</label>
-          <select name="#" id="#" class="selector">
-            <option value="#" id="#">Roger</option>
-            <option value="#" id="#">Roger</option>
+          <select name="#" id="select_uf" class="selector" onchange="getCities(event)">
+           
           </select>
         </div>
         <div class="element selecao">  
           <label for="#">Cidade</label>
-          <select name="#" id="#" class="selector">
-            <option value="#" id="#">Roger2</option>
-            <option value="#" id="#">Roger2</option>
+          <select name="#" id="select_city" class="selector" onchange="setUf(event)" >
+            <option value="#" id="#">Selecione a UF</option>
+            
           </select>
         </div>  
         <div class="element">
-          <a href="./login.html"><button>Cadastrar</button></a>
+          <button type="button" onclick="cadastrar()">Cadastrar</button>
         </div>
       </div>
     </div>
@@ -423,4 +406,5 @@
       </div>
     </div>
   </body>
+  <script src="../www/scripts/cadastro.js"></script>
 </html>

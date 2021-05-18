@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="../www/templates/main.css" />
     <link rel="stylesheet" href="../www/templates/scroll.css" />
     <!-- SCRIPT ORIGINAL -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="../www/templates/index.js"></script>
     <!-- IMPORTANTO FONTE -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -187,33 +188,33 @@
       <div class="form">
         <div class="header">Cadastro</div>
         <div class="element">
-          <label for="senha">Nome</label>
-          <input type="#" id="#" />
+          <label for="nome">Nome</label>
+          <input type="text" id="txt_nome" />
         </div>
         <div class="element">
           <label for="email">Email</label>
-          <input type="text" id="email" />
+          <input type="text" id="txt_email" />
         </div>
         <div class="element">
           <label for="senha">Senha</label>
-          <input type="password" id="senha" />
+          <input type="password" id="txt_senha" />
         </div>
         <div class="element selecao">
           <label for="selecao">UF</label>
-          <select name="#" id="#" class="selector">
-            <option value="#" id="selecao">Roger</option>
-            <option value="#" id="selecao">Roger</option>
+          <select name="#" id="select_uf" class="selector" onchange="getCities(event)">
+            
+            
           </select>
         </div>
         <div class="element selecao">  
           <label for="selecao">Cidade</label>
-          <select name="#" id="#" class="selector">
-            <option value="#" id="selecao">Roger2</option>
-            <option value="#" id="selecao">Roger2</option>
+          <select name="#" id="select_city" class="selector" onchange="setUf(event)" >
+            <option value="#" id="selecao">Selecione a UF</option>
+           
           </select>
         </div>  
         <div class="element">
-          <a href="./login.html"><button>Cadastrar</button></a>
+          <button type="button" onclick="cadastrar()">Cadastrar</button>
         </div>
       </div>
     </div>
@@ -235,6 +236,7 @@
     <!-- FOOTER - Fim -->
     <!-- AOS (Biblioteca) - SCRIPT -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../www/scripts/cadastro.js"></script>
     <script>
       AOS.init();
     </script>
