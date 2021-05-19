@@ -1,19 +1,23 @@
-# Nome do projeto
+# ProCX
 
-Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
+O objetivo geral deste projeto é um site interativo que disponibiliza diversos métodos de solução à procrastinação na intenção de que as vítimas deste problema procurem qual o melhor método de lidar com sua dificuldade.
+
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Alisson Almeida Ribeiro
+* Eros Henrique Rodriguês Oliveira Do Monte
+* Daniel Afonseca Barbosa
+* Gabriel Felipe Ribeiro Carvalho
+* Thiago De Campos Ribeiro Nolasco
+* Thiago Ianino Gonçalves Lima
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Rommel Vieira Carneiro
+* João Carlos Oliveira Caetano
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+A aplicação já está disponivel na URL : https://icei-puc-minas-pmgcc-ti.github.io/tiaw-pmg-cc-m-20211-11-procrastinacao-1/Codigo/layout/index.html . Até então desenvolvemos algumas telas com introdução do produto e funcionalidades para fazer Cadastro e Login. 
+As outras telas e funcionalidades virão em breve...
