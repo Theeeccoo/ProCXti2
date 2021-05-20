@@ -240,7 +240,7 @@ body.showLoginForm2 .popup{
 }
 
 .popup .form .element label{
-    display: blcok;
+    display: block;
     font-size: 14px;
     color: #222;
     margin-bottom: 5px;
@@ -360,6 +360,12 @@ body.showLoginForm2 .popup{
     }
 }
 
+@media screen and (max-width: 580px) {
+    .popup{
+        width: 380px;
+    }
+}
+
 @media screen and (max-width: 530px) {
     .conteudoFinal h2{
         font-size: 2.5rem;
@@ -367,6 +373,7 @@ body.showLoginForm2 .popup{
     .textoDireita{
         font-size: 1.2rem;
     }
+
 }
 @media screen and (max-width: 440px) {
     .texto{
@@ -378,9 +385,37 @@ body.showLoginForm2 .popup{
     .textoDireita{
         font-size: 1rem;
     }
+    .popup{
+        width: 280px;
+    }
+    .popup .form .element {
+        width: 280px;
+    }
+}
+@media screen and (max-width: 336px) {
+    .popup{
+        width: 250px;
+    }
+    .popup .form .element {
+        width: 250px;
+    }
+    .popup .popup-close{
+        right: -8px;
+    }
 }
 @media screen and (max-width: 320px) and (max-height: 653px) {
     .conteudoSolucao{
         height: 680px;
+    }
+}
+@media screen and (max-width: 300px) {
+    .popup{
+        width: 220px;
+    }
+    .popup .form .element {
+        width: 220px;
+    }
+    .popup .popup-close{
+        right: -5px;
     }
 }
