@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PROCX</title>
     <!-- LINK DO BOOTSTRAP - CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
     <!-- LINK DO BOOTSTRAP - JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/f7e0800341.js" crossorigin="anonymous"></script>
     <!-- CSS ORIGINAL -->
@@ -28,383 +23,412 @@
     <script src="../www/templates/index.js"></script>
     <!-- IMPORTANDO FONTE -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet" />
     <!-- BOOTSNIPP -->
-    <link
-      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      rel="stylesheet"
-      id="bootstrap-css"
-    />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- NAVBAR - Início -->
     <div class="container-navbar">
         <div class="container">
-          <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="./index.html">ProCX</a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-link" href="./index.html">Home</a>
-                  <a class="nav-link active" aria-current="page" href="./contato.html">Equipe</a>
-                  <a class="nav-link ologin" href="./login.html">Login</a>
-                  <a class="nav-link" onclick="openLoginForm2()" href="#">Cadastrar</a>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./index.html">ProCX</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="./index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="./contato.html">Equipe</a>
+                            <a class="nav-link ologin" href="./login.html">Login</a>
+                            <a class="nav-link" onclick="openLoginForm2()" href="#">Cadastrar</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </nav>
+            </nav>
         </div>
-      </div>
+    </div>
 
 
-      <!-- Modal Cadastro - Início -->
-     
-      <!-- Modal Cadastro - Fim -->
+    <!-- Modal Cadastro - Início -->
+
+    <!-- Modal Cadastro - Fim -->
     <!-- Team -->
     <section id="team" class="pb-5">
-    <div class="container">
-      <h5 class="section-title h1">NOSSO TIME</h5>
-      <div class="row">
-          <!-- Membro do time -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="image-flip" >
-                  <div class="mainflip flip-0">
-                      <div class="frontside">
-                          <div class="card">
-                              <div class="card-body text-center">
-                                  <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                  <h4 class="card-title">Alisson Almeida</h4>
-                                  <p class="card-text">Wireframe e Userflow</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="backside">
-                          <div class="card">
-                              <div class="card-body text-center mt-4">
-                                  <h4 class="card-title">Alisson Almeida</h4>
-                                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                  <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-facebook"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-twitter"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-skype"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-google"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- ./Membro do time -->
-          <!-- Membro do time -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                  <div class="mainflip">
-                      <div class="frontside">
-                          <div class="card">
-                              <div class="card-body text-center">
-                                  <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png" alt="card image"></p>
-                                  <h4 class="card-title">Daniel Afonseca</h4>
-                                  <p class="card-text">Implementou funcionalidades.</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="backside">
-                          <div class="card">
-                              <div class="card-body text-center mt-4">
-                                  <h4 class="card-title">Daniel Afonseca</h4>
-                                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                  <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-facebook"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-twitter"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-skype"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-google"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- ./Membro do time -->
-          <!-- Membro do time -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                  <div class="mainflip">
-                      <div class="frontside">
-                          <div class="card">
-                              <div class="card-body text-center">
-                                  <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_03.png" alt="card image"></p>
-                                  <h4 class="card-title">Eros Henrique</h4>
-                                  <p class="card-text">Implementou funcionalidades.</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="backside">
-                          <div class="card">
-                              <div class="card-body text-center mt-4">
-                                  <h4 class="card-title">Eros Henrique</h4>
-                                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                  <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-facebook"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-twitter"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-skype"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-google"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- ./Membro do time -->
-          <!-- Membro do time -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                  <div class="mainflip">
-                      <div class="frontside">
-                          <div class="card">
-                              <div class="card-body text-center">
-                                  <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_04.jpg" alt="card image"></p>
-                                  <h4 class="card-title">Gabriel Felipe</h4>
-                                  <p class="card-text">Organização do código.</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="backside">
-                          <div class="card">
-                              <div class="card-body text-center mt-4">
-                                  <h4 class="card-title">Gabriel Felipe</h4>
-                                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                  <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-facebook"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-twitter"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-skype"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-google"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- ./Membro do time -->
-          <!-- Membro do time -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                  <div class="mainflip">
-                      <div class="frontside">
-                          <div class="card">
-                              <div class="card-body text-center">
-                                  <p><img class=" img-fluid" src="../www/images/thiago.jpeg" alt="card image"></p>
-                                  <h4 class="card-title">Thiago de Campos</h4>
-                                  <p class="card-text">Template do site.</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="backside">
-                          <div class="card">
-                              <div class="card-body text-center mt-4">
-                                  <h4 class="card-title">Thiago de Campos</h4>
-                                  <p class="card-text">Estudante no 1º Período do curso de Ciência da Computação da faculdade PUC MINAS (Coração Eucarístico)<br>email: thiagodecampos1@gmail.com</p>
-                                  <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.instagram.com/theeecco/" title="Instagram: Thiago de Campos">
-                                            <i class="fa fa-instagram"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/Thicoooo" title="Twitter: Thiago de Campos">
-                                              <i class="fa fa-twitter"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" title="Discord: Thiago de Campos (POG Thicão#8579)">
-                                            <i class="fab fa-discord fa-spin" style="font-size:20px"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://github.com/Theeeccoo" title="Github: Thiago de Campos">
-                                            <i class="fab fa-github"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- ./Membro do time -->
-          <!-- Membro do time -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                  <div class="mainflip">
-                      <div class="frontside">
-                          <div class="card">
-                              <div class="card-body text-center">
-                                  <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_06.jpg" alt="card image"></p>
-                                  <h4 class="card-title">Thiago Ianino</h4>
-                                  <p class="card-text">Implementou funcionalidades.</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="backside">
-                          <div class="card">
-                              <div class="card-body text-center mt-4">
-                                  <h4 class="card-title">Thiago Ianino</h4>
-                                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                  <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-facebook"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-twitter"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-skype"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-google"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- ./Membro do time -->
+        <div class="container">
+            <h5 class="section-title h1">NOSSO TIME</h5>
+            <div class="row">
+                <!-- Membro do time -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../www/images/alisson.png" alt="card image"></p>
+                                        <h4 class="card-title">Alisson Ribeiro</h4>
+                                        <p class="card-text">Wireframe e Userflow.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Alisson Ribeiro</h4>
+                                        <p class="card-text"><br>Sou estudante do 1º período de Ciência da Computação
+                                            pela PUC Minas.<br>
+                                            email:alisson.ribeiro@sga.pucminas.br</p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.instagram.com/alissonar_/"
+                                                    title="Instagram: Alisson Ribeiro">
+                                                    <i class="fa fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://github.com/AlissonAR" title="Github: Alisson Ribeiro">
+                                                    <i class="fab fa-github"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Membro do time -->
+                <!-- Membro do time -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid"
+                                                src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png"
+                                                alt="card image"></p>
+                                        <h4 class="card-title">Daniel Afonseca</h4>
+                                        <p class="card-text">Implementou funcionalidades.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Daniel Afonseca</h4>
+                                        <p class="card-text">This is basic card with image on top, title, description
+                                            and button.This is basic card with image on top, title, description and
+                                            button.This is basic card with image on top, title, description and button.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Membro do time -->
+                <!-- Membro do time -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid"
+                                                src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_03.png"
+                                                alt="card image"></p>
+                                        <h4 class="card-title">Eros Henrique</h4>
+                                        <p class="card-text">Implementou funcionalidades.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Eros Henrique</h4>
+                                        <p class="card-text">This is basic card with image on top, title, description
+                                            and button.This is basic card with image on top, title, description and
+                                            button.This is basic card with image on top, title, description and button.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Membro do time -->
+                <!-- Membro do time -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid"
+                                                src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_04.jpg"
+                                                alt="card image"></p>
+                                        <h4 class="card-title">Gabriel Felipe</h4>
+                                        <p class="card-text">Organização do código.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Gabriel Felipe</h4>
+                                        <p class="card-text">This is basic card with image on top, title, description
+                                            and button.This is basic card with image on top, title, description and
+                                            button.This is basic card with image on top, title, description and button.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Membro do time -->
+                <!-- Membro do time -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../www/images/thiago.jpeg" alt="card image"></p>
+                                        <h4 class="card-title">Thiago de Campos</h4>
+                                        <p class="card-text">Template do site.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Thiago de Campos</h4>
+                                        <p class="card-text">Estudante no 1º Período do curso de Ciência da Computação
+                                            da faculdade PUC MINAS (Coração Eucarístico)<br>email:
+                                            thiagodecampos1@gmail.com</p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.instagram.com/theeecco/"
+                                                    title="Instagram: Thiago de Campos">
+                                                    <i class="fa fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://twitter.com/Thicoooo"
+                                                    title="Twitter: Thiago de Campos">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center"
+                                                    title="Discord: Thiago de Campos (POG Thicão#8579)">
+                                                    <i class="fab fa-discord fa-spin" style="font-size:20px"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://github.com/Theeeccoo"
+                                                    title="Github: Thiago de Campos">
+                                                    <i class="fab fa-github"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Membro do time -->
+                <!-- Membro do time -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid"
+                                                src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_06.jpg"
+                                                alt="card image"></p>
+                                        <h4 class="card-title">Thiago Ianino</h4>
+                                        <p class="card-text">Implementou funcionalidades.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Thiago Ianino</h4>
+                                        <p class="card-text">This is basic card with image on top, title, description
+                                            and button.This is basic card with image on top, title, description and
+                                            button.This is basic card with image on top, title, description and button.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank"
+                                                    href="https://www.fiverr.com/share/qb8D02">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Membro do time -->
 
-              <!-- Modal Cadastro - Início -->
-    <div class="popup-overlay"></div>
-    <div class="popup">
-      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
-      <div class="form">
-        <div class="header">Cadastro</div>
-        <div class="element">
-          <label for="senha">Nome</label>
-          <input type="text" id="txt_nome" />
-        </div>
-        <div class="element">
-          <label for="email">Email</label>
-          <input type="text" id="txt_email" />
-        </div>
-        <div class="element">
-          <label for="senha">Senha</label>
-          <input type="password" id="txt_senha" />
-        </div>
-        <div class="element selecao">
-          <label for="#">UF</label>
-          <select name="#" id="select_uf" class="selector" onchange="getCities(event)">
-           
-          </select>
-        </div>
-        <div class="element selecao">  
-          <label for="#">Cidade</label>
-          <select name="#" id="select_city" class="selector" onchange="setUf(event)" >
-            <option value="#" id="#">Selecione a UF</option>
-            
-          </select>
-        </div>  
-        <div class="element">
-          <button type="button" onclick="cadastrar()">Cadastrar</button>
-        </div>
-      </div>
-    </div>
-    <!-- Modal Cadastro - Fim -->
+                <!-- Modal Cadastro - Início -->
+                <div class="popup-overlay"></div>
+                <div class="popup">
+                    <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+                    <div class="form">
+                        <div class="header">Cadastro</div>
+                        <div class="element">
+                            <label for="senha">Nome</label>
+                            <input type="text" id="txt_nome" />
+                        </div>
+                        <div class="element">
+                            <label for="email">Email</label>
+                            <input type="text" id="txt_email" />
+                        </div>
+                        <div class="element">
+                            <label for="senha">Senha</label>
+                            <input type="password" id="txt_senha" />
+                        </div>
+                        <div class="element selecao">
+                            <label for="#">UF</label>
+                            <select name="#" id="select_uf" class="selector" onchange="getCities(event)">
 
-      </div>
-    </div>
-  </body>
-  <script src="../www/scripts/cadastro.js"></script>
+                            </select>
+                        </div>
+                        <div class="element selecao">
+                            <label for="#">Cidade</label>
+                            <select name="#" id="select_city" class="selector" onchange="setUf(event)">
+                                <option value="#" id="#">Selecione a UF</option>
+
+                            </select>
+                        </div>
+                        <div class="element">
+                            <button type="button" onclick="cadastrar()">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Cadastro - Fim -->
+
+            </div>
+        </div>
+</body>
+<script src="../www/scripts/cadastro.js"></script>
+
 </html>
