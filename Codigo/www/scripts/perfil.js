@@ -29,9 +29,16 @@ function ListarUsuario(){
     const titulo = document.getElementById('titulo_entrada')
     
    
-    titulo.innerHTML = "Bem-vindo " + User.name + "!"
+    titulo.innerHTML = `Suas atividades, ${User.name}`
    
 
 }
 ListarUsuario()
 
+$(document).ready (function () {
+    $('#btn-duvida').click(function (){
+        $('#span1').toggleClass('frente');
+        $('#span2').toggleClass('frente');
+        $('#span3').toggleClass('frente');
+    })
+})
