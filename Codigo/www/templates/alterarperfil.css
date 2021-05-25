@@ -1,0 +1,200 @@
+/* ROOT */
+:root{
+    --mint-cream: #F1FFFA;
+    --tea-green: #CCFCCB;
+    --celadon: #96E6B3;
+    --middle-green: #568259;
+    --ebony: #464E47;
+    --cinza-escuro: #353839;
+}
+
+
+/* GLOBAL */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: var(--mint-cream);
+}
+
+/* NAVBAR - Início */
+
+.container-navbar{
+    background: var(--celadon);
+    font-weight: normal;
+    justify-content: space-between;
+}
+
+.navbar{
+    background: var(--celadon);
+    display: flex;
+    justify-content: center;
+}
+
+.ologin{
+    margin-left: 150px;
+}
+
+.nav-link:hover{
+    background: var(--tea-green);
+    color: black;
+}
+
+.nav-link a:focus{
+    color: var(--cinza-escuro);
+}
+
+.navbar-nav .active{
+    border-bottom: 2px solid brown;
+}
+
+.container-fluid .navbar-brand{
+    margin-right: 25%;
+    padding: 20px;
+    color: var(--tea-green) !important;
+    text-decoration: none;
+    background: var(--ebony);
+}
+.container-fluid .navbar-brand:hover{
+    color: var(--tea-green);
+}
+
+.nav-link, .nav-link a{
+    padding: 10px;
+    color: var(--cinza-escuro);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+/* NAVBAR - Fim */
+
+/* ALTERAR PERFIL - Início */
+.voltar{
+    margin-top: 2%;
+}
+.voltar a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+.voltar i{
+    margin-right: 10px;
+    animation: arrowleft .5s alternate infinite;
+    font-size: 1.2rem;
+}
+.voltar button{
+    background: var(--mint-cream);
+    border: none;
+}
+
+
+.ti{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+.titulo{
+    font-weight: bolder;
+    font-size: 3rem;
+}
+.alterar-perfil{
+    background-color: var(--celadon);
+    border-radius: 10px; 
+    height: 200%;
+}
+.linha{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+.linha label{
+    display: block;
+    font-size: 1.5rem;
+}
+.linha input, .linha select{
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    height: 50%;
+    background: var(--mint-cream);
+}
+.linha input:focus, .linha select:focus{
+    border: none;
+    background: #e4e7e5;
+}
+.linhaSenha{
+    margin-top: 3%;
+    margin-left: 7.5%;
+    display: flex;
+    justify-content: start;
+}
+.linhaSenha label{
+    display: block;
+    font-size: 1.5rem;
+}
+.linhaSenha input{
+    width: 88%;
+    border-radius: 10px;
+    border: none;
+    height: 50%;
+    background: var(--mint-cream);
+}
+.linhaSenha input:focus{
+    border: none;
+    background: #e4e7e5;
+}
+.linha button{
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    height: 90%;
+    background: var(--tea-green);
+    margin-bottom: 5%
+}
+.linha button:hover{
+    background: var(--middle-green);
+    
+}
+/* ALTERAR PERFIL - Fim */
+
+/* RESPONSIVIDADE - Início */
+@media screen and (max-width: 574px) {
+    .alterar-perfil{
+        height: 200%;
+    }
+    .linha{
+        display: inline;
+        margin-bottom: 0;
+    }
+    .linha label{
+        margin-top: 5px;
+    }
+    .linhaSenha{
+        margin-top: 5px;
+        margin-left: 0;
+        margin-bottom: 10%;
+        width: 91%;
+        height: 5%;
+    }
+}
+@media screen and (max-width: 390px) {
+    .titulo{
+        font-size: 2rem;
+    }
+}
+/* REPONSIVIDADE - Fim */
+
+/* KEYFRAME animação - Início */
+@keyframes arrowleft{
+    0%{
+        transform: translateX(-.5rem);
+    }
+    100%{
+        transform: translateX(.5rem);        
+    }
+}
+/* KEYFRAME animação - Fim */

@@ -1,0 +1,487 @@
+/* ROOT */
+:root{
+    --mint-cream: #F1FFFA;
+    --tea-green: #CCFCCB;
+    --celadon: #96E6B3;
+    --middle-green: #568259;
+    --ebony: #464E47;
+    --cinza-escuro: #353839;
+    --indigo-dye: #134074;
+}
+
+
+/* GLOBAL */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: var(--mint-cream);
+}
+
+/* NAVBAR - Início */
+
+.container-navbar{
+    background: var(--celadon);
+    font-weight: normal;
+    justify-content: space-between;
+}
+
+.navbar{
+    background: var(--celadon);
+    display: flex;
+    justify-content: center;
+}
+
+.ologin{
+    margin-left: 150px;
+}
+
+.nav-link:hover{
+    background: var(--tea-green);
+    color: black;
+}
+
+.nav-link a:focus{
+    color: var(--cinza-escuro);
+}
+
+.navbar-nav .active{
+    border-bottom: 2px solid brown;
+}
+
+.container-fluid .navbar-brand{
+    margin-right: 25%;
+    padding: 20px;
+    color: var(--tea-green) !important;
+    text-decoration: none;
+    background: var(--ebony);
+}
+.container-fluid .navbar-brand:hover{
+    color: var(--tea-green);
+}
+
+.nav-link, .nav-link a{
+    padding: 10px;
+    color: var(--cinza-escuro);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+/* #dropdown-btn{
+    display: none;
+} */
+
+/* NAVBAR - Fim */
+/* SAUDAÇÃO - Início */
+
+.containersaudacao{
+    margin: 2% 5%;
+}
+.titulo_entrada{
+    display: inline-block;
+    font-weight: bolder;
+    font-size: 3rem;
+    
+}
+.btn-atividades{
+    display: flex;
+    align-items: center;
+}
+.btn-atividades button{
+    font-size: 2.4rem;
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    font-weight: bold;
+    background: var(--middle-green);
+}
+/* SAUDAÇÃO - Fim */
+/* MODAL ATIVIDADE - Início */
+.popup-overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.popup{
+    position: absolute;
+    top: -150%; /* 250% */
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.15);
+    width: 500px;
+    height: 540px;
+    background: #f5f5f5;
+    z-index: 2;
+    box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+.popup-overlay3{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.popup3{
+    position: absolute;
+    top: -150%; /* 250% */
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.15);
+    width: 500px;
+    height: 540px;
+    background: #f5f5f5;
+    z-index: 2;
+    box-shadow: 5px 5px 3px rgba(255, 0, 0, 0.2);
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+body.showLoginForm .popup-overlay{
+    display: block;
+}
+body.showLoginForm .popup{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+body.showLoginForm3 .popup-overlay3{
+    display: block;
+}
+body.showLoginForm3 .popup3{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup .popup-close{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: #555;
+    color: #f5f5f5;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup .form .header{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    margin: 20px 0px;
+}
+
+.popup .form .element{
+    padding: 8px 20px;
+}
+
+.popup .form .element label{
+    display: block;
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.popup .form .element input{
+    width: 100%;
+    padding: 8px 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    background: #eee;
+    border-radius: 5px;
+}
+
+.popup .form .element .btn-criar{
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    background: var(--middle-green);
+    color: #f5f5f5;
+}
+.popup3 .popup-close{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: #555;
+    color: #f5f5f5;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup3 .form .header{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    margin: 20px 0px;
+}
+
+.popup3 .form .element{
+    padding: 8px 20px;
+}
+
+.popup3 .form .element label{
+    display: block;
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.popup3 .form .element input{
+    width: 100%;
+    padding: 8px 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    background: #eee;
+    border-radius: 5px;
+}
+
+.popup3 .form .element .btn-criar{
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #ff953e;
+    color: #f5f5f5;
+}
+.aviso{
+    font-size: 80%;
+    color: gray;
+    margin-bottom: 0%;
+}
+.duvidas button{
+    margin-left: 4px;
+    border: none;
+    background: none;
+    color: gray;
+}
+.a{
+    display: none;
+}
+.frente{
+    display: inline;  
+    color: gray;
+    font-size: .8rem;
+}
+/* MODAL ATIVIDADE - Fim */
+
+/* MAIN ATIVIDADES - Início */
+.box-atividades{
+    background: var(--tea-green);
+    border-radius: 10px;
+    color: black;
+    margin: 5% 2%;
+}
+.box-atividades h5{
+    font-weight: bolder;
+    display: inline;
+}
+.delete-atividade{
+    border: none;
+    background: var(--tea-green);
+    margin-left: 70%;
+}
+
+.descricao{
+    font-size: .8rem;
+    margin-bottom: 3%;
+}
+.box-atividades h6{
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+.horario{
+    margin-bottom: 1%;
+}
+.linha{
+    width: 100vw;
+}
+
+.check{
+    width: 20px;
+    height: 20px;
+}
+/* MAIN Recompensa - Início */
+.container-recompensa{
+    display:flex;
+    justify-content: center;
+}
+.titulo-recompensa{
+    font-size: 3.5rem;
+    font-weight: bolder;
+}
+/* MAIN ATIVIDADES - Fim  */
+
+
+
+
+@media screen and (max-width: 2150px) {
+    .delete-atividade{
+        margin-left: 60%;
+    }
+}
+@media screen and (max-width: 1634px) {
+    .delete-atividade{
+        margin-left: 52%;
+    }
+}
+@media screen and (max-width: 1634px) {
+    .btn-atividades button{
+        font-size: 2rem;
+    }
+    .delete-atividade{
+        margin-left: 52%;
+    }
+}
+@media screen and (max-width: 1367px) {
+    .delete-atividade{
+        margin-left: 45%;
+    }
+}
+@media screen and (max-width: 1196px) {
+    .btn-atividades button{
+        font-size: 1.5rem;
+    }
+    .delete-atividade{
+        margin-left: 38%;
+    }
+}
+@media screen and (max-width: 1067px) {
+    .delete-atividade{
+        margin-left: 30%;
+    }
+}
+@media screen and (max-width: 992px) {
+    .delete-atividade{
+        margin-left: 25%;
+    }
+    .titulo_entrada{
+        font-size: 2.5rem;
+    }
+    .btn-atividades button{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 903px) {
+    .delete-atividade{
+        margin-left: 15%;
+    }
+}
+@media screen and (max-width: 795px) {
+    .delete-atividade{
+        margin-left: 8%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .titulo_entrada{
+        font-size: 2rem;
+    }
+    .delete-atividade{
+        margin-left: 65%;
+    }
+    .container-atividades .box-atividades{
+        margin: 5% auto;
+        width: 90vw ;
+    }
+} 
+@media screen and (max-width: 695px) {
+    .delete-atividade{
+        margin-left: 50%;
+    }
+}
+@media screen and (max-width: 506px) {
+    .delete-atividade{
+        margin-left: 40%;
+    }
+    .titulo_entrada{
+        font-size: 1.8rem;
+    }
+    .btn-atividades button{
+        font-size: .8rem;
+    }
+    .titulo-recompensa{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 419px) {
+    .delete-atividade{
+        margin-left: 30%;
+    }
+    .titulo_entrada{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 363px) {
+    .delete-atividade{
+        margin-left: 25%;
+    }
+    .btn-atividades button{
+        font-size: .5rem;
+    }
+}
+@media screen and (max-width: 363px) {
+    .delete-atividade{
+        margin-left: 15%;
+    }
+}
+@media screen and (max-width: 303px) {
+    .delete-atividade{
+        margin-left: 5%;
+    }
+    .titulo_entrada{
+        font-size: 1rem;
+    }
+}
+/* RESPOSIVIDADE MODAL - Início */
+@media screen and (max-width: 546px) {
+    .popup{
+        width: 400px;
+    }
+}
+@media screen and (max-width: 433px) {
+    .popup{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 325px) {
+    .popup{
+        width: 250px;
+    }
+    .frente{
+        font-size: .65rem;
+    }
+}

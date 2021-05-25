@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil usuário</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../www/templates/perfil.css" />
+    <!-- IMPORTANDO FONTE -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- JQUERY -->
+    <script src="../www/scripts/jquery-3.6.0.min.js"></script>
+    <!-- FONTAWESOME -->
+    <script
+      src="https://kit.fontawesome.com/f7e0800341.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- LINK DO BOOTSTRAP - CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!-- LINK DO BOOTSTRAP - JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../www/templates/index.js"></script>
+  </head>
+  <body>
+    <!-- NAVBAR - Início -->
+    <div class="container-navbar">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">ProCX</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link" href="./index.html">Home</a>
+                <a class="nav-link" href="./contato.html">Equipe</a>
+                <div class="btn-group" id="dropdown-btn">
+                  <button
+                    type="button"
+                    class="btn nav-link btn-lg active"
+                    aria-current="page"
+                  >
+                    Perfil
+                  </button>
+                  <button
+                    type="button"
+                    class="btn dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <span class="visually-hidden"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Desempenho</a></li>
+                    <li>
+                      <a class="dropdown-item" href="./alterar.html">Alterar perfil</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">Sair</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- NAVBAR - Fim -->
+
+    <div class="primeiraLinha">
+      <div class="containersaudacao">
+        <div class="row">
+          <div class="col-9">
+            <h1 id="titulo_entrada" class="titulo_entrada">Hahaha HJ NÃO</h1>
+          </div>
+          <div class="col-3 btn-atividades">
+            <button onclick="openLoginForm()">Criar atividade</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Atividade - Início -->
+    <div class="popup-overlay"></div>
+    <div class="popup">
+      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+      <div class="form">
+        <div class="header">Atividades</div>
+        <div class="element">
+          <label for="ativname"
+            >Nome da atividade<span id="span1" class="a">
+              (Onde você colocará o nome da sua atividade)</span
+            ></label
+          >
+          <input type="text" maxlength="30" id="txt_nome_ativ"/>
+          <p class="aviso">*máximo de 30 caracteres</p>
+        </div>
+        <div class="element">
+          <label for="desc"
+            >Descrição<span id="span2" class="a">
+              (Onde você colocará uma breve descrição da sua atividade)</span
+            ></label
+          >
+          <input type="text" maxlength="50" id="txt_descricao_ativ"/>
+          <p class="aviso">*máximo de 50 caracteres</p>
+        </div>
+        <div class="element">
+          <label for="horario"
+            >Horário<span id="span3" class="a">
+              (Onde você colocará um horário que deseja fazer sua
+              atividade)</span
+            ></label
+          >
+          <input type="time" id="txt_horario_ativ"/>
+        </div>
+        <div class="element">
+          <button type="button" onclick="criarAtividades()" class="btn-criar">Criar atividade</button>
+        </div>
+        <div class="element duvidas">
+          <p>
+            Duvidas?<button id="btn-duvida">
+              <i class="far fa-question-circle"></i>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-overlay3"></div>
+    <div class="popup3">
+      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+      <div class="form">
+        <div class="header">Atividades</div>
+        <div class="element">
+          <label for="ativname"
+            >Nome da atividade<span id="span1" class="a">
+              (Onde você colocará o nome da sua atividade)</span
+            ></label
+          >
+          <input type="text" maxlength="30" id="txt_nome_ativ"/>
+          <p class="aviso">*máximo de 30 caracteres</p>
+        </div>
+        <div class="element">
+          <label for="desc"
+            >Descrição<span id="span2" class="a">
+              (Onde você colocará uma breve descrição da sua atividade)</span
+            ></label
+          >
+          <input type="text" maxlength="50" id="txt_descricao_ativ"/>
+          <p class="aviso">*máximo de 50 caracteres</p>
+        </div>
+        <div class="element">
+          <label for="horario"
+            >Horário<span id="span3" class="a">
+              (Onde você colocará um horário que deseja fazer sua
+              atividade)</span
+            ></label
+          >
+          <input type="time" id="txt_horario_ativ"/>
+        </div>
+        <div id="chave_edit" hidden></div>
+        <div class="element">
+          <button type="button" onclick="editarAtividade()" class="btn-criar">Editar atividade</button>
+        </div>
+        <div class="element duvidas">
+          <p>
+            Duvidas?<button id="btn-duvida">
+              <i class="far fa-question-circle"></i>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <main>
+      <h1 id="titulo_atividades" ></h1>
+      <div class="container-atividades">
+        <div class="row linha" id="Atividades">
+         
+        
+
+      </div>
+      <div class="container-recompensa">
+        <h1 class="titulo-recompensa">Recompensa</h1>
+      </div>
+    </main>
+    <!-- Modal Atividade - Fim -->
+  </body>
+  <script src="../www/scripts/perfil.js"></script>
+</html>
