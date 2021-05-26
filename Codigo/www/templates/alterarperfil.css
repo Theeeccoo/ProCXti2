@@ -110,6 +110,7 @@ body{
     margin-top: 3%;
     display: flex;
     justify-content: center;
+
 }
 .linha label{
     display: block;
@@ -122,6 +123,7 @@ body{
     height: 50%;
     background: var(--mint-cream);
 }
+
 .linha input:focus, .linha select:focus{
     border: none;
     background: #e4e7e5;
@@ -158,6 +160,9 @@ body{
 .linha button:hover{
     background: var(--middle-green);
     
+}
+.linha .disabled{
+    background: rgb(172, 164, 164);
 }
 /* ALTERAR PERFIL - Fim */
 
