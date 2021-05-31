@@ -100,26 +100,26 @@ function ListarAtividades() {
 
     } else {
         // ~ Odenação das atividades utilizando um "Bubble Sorter" ~ \\
-        if(Atividades.length > 1){ // ~ Só será necessário fazer a ordenação caso existam mais de 1 atividade
-            for(let i = 0; i < Atividades.length; i++){
+        if (Atividades.length > 1) { // ~ Só será necessário fazer a ordenação caso existam mais de 1 atividade
+            for (let i = 0; i < Atividades.length; i++) {
                 // Atribuição via desestruturação                 ~ Separando o objeto horário em dois apartir do ":"
-                let [arrayHorarioPosterior, arrayMinutoPosterior] = Atividades[i].horario.split(":"); 
+                let [arrayHorarioPosterior, arrayMinutoPosterior] = Atividades[i].horario.split(":");
 
-                for(let j = 0; j < Atividades.length; j++){
+                for (let j = 0; j < Atividades.length; j++) {
                     // Atribuição via desestruturação               ~ Separando o objeto horário em dois apartir do ":"
                     let [arrayHorarioAnterior, arrayMinutoAnterior] = Atividades[j].horario.split(":");
 
                     // ~ Verificações necessárias para fazer a ordenação de acordo com o horário ~ \\
                     // Caso a HORA do primeiro seja maior do que a HORA do segundo, "troque o índice" dos dois 
-                    if (arrayHorarioAnterior > arrayHorarioPosterior){ 
+                    if (arrayHorarioAnterior > arrayHorarioPosterior) {
                         aux = Atividades[j]
                         Atividades[j] = Atividades[i]
                         Atividades[i] = aux;
                     }
-                    
+
                     // Caso a HORA do primeiro seja igual a HORA do segundo, verifique os MINUTOS
-                    if(arrayHorarioAnterior == arrayHorarioPosterior){
-                        if(arrayMinutoAnterior[j] > arrayMinutoPosterior[i]){
+                    if (arrayHorarioAnterior == arrayHorarioPosterior) {
+                        if (arrayMinutoAnterior[j] > arrayMinutoPosterior[i]) {
                             aux = Atividades[j]
                             Atividades[j] = Atividades[i]
                             Atividades[i] = aux;
@@ -145,9 +145,8 @@ function ListarAtividades() {
         </div>
         <h6>Horário:</h6>
         <p class='horario'>${ativ.horario}</p>
-        <input type='checkbox' onchange="isChecked(${ativ.id})" name='' id='' class='check' />
-        </div> `  }
-
+        <input type='checkbox' onchange="isChecked(${ativ.id})" name='' id='${ativ.id}' class='check' />
+        </div> ` }
 
         )
 
@@ -175,6 +174,14 @@ function sucesso() {
     ListarAtividades()
 }
 
+function isChecked(Id) 
+{
+    let Atividades = JSON.parse(window.localStorage.getItem(`atividades${SessionID}`))//pega no loca storage todas as atividades do usuário
+    let atividadeIndex = Atividades.findIndex(ativ => ativ.id == Id)//acha o indice da atividade no array    
+    Atividades[atividadeIndex] = {...Atividades[atividadeIndex], checked: !Atividades[atividadeIndex].checked}//muda dentro do array o atributo checked do array
+    localStorage.setItem(`atividades${SessionID}`,JSON.stringify(Atividades));//salvando no local storage
+    console.log(Atividades)//mostra se está checkado ou não
+}
 
 function criarAtividades() {
 
