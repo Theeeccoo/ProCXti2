@@ -174,6 +174,13 @@ function sucesso() {
     ListarAtividades()
 }
 
+function acrescentarContadorAtividade(){
+    RefreshUsers = JSON.parse(window.localStorage.getItem("users"));
+   RefreshUsers[SessionID].ActivitiesAlreadyCreated ++
+   localStorage.setItem(`users`,JSON.stringify(RefreshUsers));
+
+}
+
 function isChecked(Id) 
 {
     let Atividades = JSON.parse(window.localStorage.getItem(`atividades${SessionID}`))//pega no loca storage todas as atividades do usuário
@@ -184,6 +191,9 @@ function isChecked(Id)
 }
 
 function criarAtividades() {
+    RefreshUsers = JSON.parse(window.localStorage.getItem("users"));
+    const count = RefreshUsers[SessionID].ActivitiesAlreadyCreated
+
 
     const nome = document.getElementById("txt_nome_ativ").value
     const horario = document.getElementById("txt_horario_ativ").value
@@ -206,7 +216,7 @@ function criarAtividades() {
             }
             const AtividadesArray = [NovaAtividade]
             localStorage.setItem(`atividades${SessionID}`, JSON.stringify(AtividadesArray));
-
+            acrescentarContadorAtividade()
             sucesso()
         }
         else {
@@ -221,7 +231,7 @@ function criarAtividades() {
 
             Atividades.push(NovaAtividade)
             localStorage.setItem(`atividades${SessionID}`, JSON.stringify(Atividades));
-
+            acrescentarContadorAtividade()
             sucesso();
         }
 
