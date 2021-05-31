@@ -158,7 +158,33 @@ function ListarAtividades() {
 }
 ListarAtividades()
 
+function editarAtividade() {
+    const nome = document.getElementById("txt_nome_ativ2").value
+    const descricao = document.getElementById("txt_descricao_ativ2").value
+    const horario = document.getElementById("txt_horario_ativ2").value
+    const id = document.getElementById("txt_secret").value
+ 
+ if(nome == ""|| descricao == ""|| horario == ""){
+    Swal.fire({
 
+        icon: 'warning',
+        title: 'Preecha todos os campos',
+        showConfirmButton: false,
+        timer: 1500,
+
+      })  
+ }
+ else{
+    const EditAtividades = JSON.parse(window.localStorage.getItem(`atividades${SessionID}`))
+    const index = EditAtividades.findIndex(ativ => ativ.id == id)
+    EditAtividades[index].nome = nome
+    EditAtividades[index].descricao = descricao
+    EditAtividades[index].horario = horario
+    localStorage.setItem(`atividades${SessionID}`,JSON.stringify(EditAtividades));
+    document.body.classList.remove("showLoginForm3")
+    sucesso("alterada")
+ }
+}
 function sucesso() {
     Swal.fire({
 
@@ -174,19 +200,18 @@ function sucesso() {
     ListarAtividades()
 }
 
-function acrescentarContadorAtividade(){
+function acrescentarContadorAtividade() {
     RefreshUsers = JSON.parse(window.localStorage.getItem("users"));
-   RefreshUsers[SessionID].ActivitiesAlreadyCreated ++
-   localStorage.setItem(`users`,JSON.stringify(RefreshUsers));
+    RefreshUsers[SessionID].ActivitiesAlreadyCreated++
+    localStorage.setItem(`users`, JSON.stringify(RefreshUsers));
 
 }
 
-function isChecked(Id) 
-{
+function isChecked(Id) {
     let Atividades = JSON.parse(window.localStorage.getItem(`atividades${SessionID}`))//pega no loca storage todas as atividades do usuário
     let atividadeIndex = Atividades.findIndex(ativ => ativ.id == Id)//acha o indice da atividade no array    
-    Atividades[atividadeIndex] = {...Atividades[atividadeIndex], checked: !Atividades[atividadeIndex].checked}//muda dentro do array o atributo checked do array
-    localStorage.setItem(`atividades${SessionID}`,JSON.stringify(Atividades));//salvando no local storage
+    Atividades[atividadeIndex] = { ...Atividades[atividadeIndex], checked: !Atividades[atividadeIndex].checked }//muda dentro do array o atributo checked do array
+    localStorage.setItem(`atividades${SessionID}`, JSON.stringify(Atividades));//salvando no local storage
     console.log(Atividades)//mostra se está checkado ou não
 }
 
