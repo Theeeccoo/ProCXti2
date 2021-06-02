@@ -158,6 +158,16 @@ function ListarAtividades() {
 }
 ListarAtividades()
 
+function deletarAtividade(id){
+    const EditAtividades = JSON.parse(window.localStorage.getItem(`atividades${SessionID}`))//Busca no localStorage.
+    let index = EditAtividades.findIndex(ativ => ativ.id == id)// Procurando índice da atividade pelo ID.
+    EditAtividades.splice(index,1)//Remove item do array especifíco
+    localStorage.setItem(`atividades${SessionID}`,JSON.stringify(EditAtividades));//Setando no localSto.
+    ListarAtividades()
+    sucesso('Deletada')
+    console.log(EditAtividades)
+}
+
 function editarAtividade() {
     const nome = document.getElementById("txt_nome_ativ2").value
     const descricao = document.getElementById("txt_descricao_ativ2").value
@@ -185,11 +195,11 @@ function editarAtividade() {
     sucesso("alterada")
  }
 }
-function sucesso() {
+function sucesso(nome) {
     Swal.fire({
 
         icon: 'success',
-        title: 'Atividade registrada com sucesso',
+        title: `Atividade ${nome} com sucesso`,
         showConfirmButton: false,
         timer: 1500,
 
