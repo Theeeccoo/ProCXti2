@@ -163,14 +163,15 @@ function deletarAtividade(id){
     localStorage.setItem(`atividades${SessionID}`,JSON.stringify(EditAtividades));//Setando no localSto.
     ListarAtividades()
     sucesso('Deletada')
-    console.log(EditAtividades)
+    
 }
 
 function editarAtividade() {
     const nome = document.getElementById("txt_nome_ativ2").value
     const descricao = document.getElementById("txt_descricao_ativ2").value
     const horario = document.getElementById("txt_horario_ativ2").value
-    const id = document.getElementById("txt_secret").value
+    const id = document.getElementById("txt_secret").name
+   
  
  if(nome == ""|| descricao == ""|| horario == ""){
     Swal.fire({
@@ -232,15 +233,30 @@ function criarAtividades() {
     const horario = document.getElementById("txt_horario_ativ").value
     const descricao = document.getElementById("txt_descricao_ativ").value
 
+    console.log(nome)
+    console.log(horario)
+    console.log(descricao)
 
-    if (nome != '' || horario != '' || descricao != '') {
+    if (horario == '' || nome == '' || descricao == '') {
 
+        Swal.fire({
+
+            icon: 'warning',
+            title: 'Preecha todos os campos',
+            showConfirmButton: false,
+            timer: 1500,
+
+        })
+        
+
+    }
+    else {
 
         const Atividades = JSON.parse(window.localStorage.getItem(`atividades${SessionID}`))
 
         if (Atividades == null || Atividades == []) {
             const NovaAtividade = {
-                id: 0,
+                id: count,
                 nome: nome,
                 horario: horario,
                 descricao: descricao,
@@ -250,11 +266,11 @@ function criarAtividades() {
             const AtividadesArray = [NovaAtividade]
             localStorage.setItem(`atividades${SessionID}`, JSON.stringify(AtividadesArray));
             acrescentarContadorAtividade()
-            sucesso()
+            sucesso('criada')
         }
         else {
             const NovaAtividade = {
-                id: Atividades.length,
+                id: count,
                 nome: nome,
                 horario: horario,
                 descricao: descricao,
@@ -265,18 +281,10 @@ function criarAtividades() {
             Atividades.push(NovaAtividade)
             localStorage.setItem(`atividades${SessionID}`, JSON.stringify(Atividades));
             acrescentarContadorAtividade()
-            sucesso();
+            sucesso('criada');
         }
 
-    } else {
-        Swal.fire({
-
-            icon: 'warning',
-            title: 'Preecha todos os campos',
-            showConfirmButton: false,
-            timer: 1500,
-
-        })
+      
     }
 }
 
