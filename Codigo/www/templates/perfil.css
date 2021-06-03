@@ -310,12 +310,16 @@ body.showLoginForm3 .popup3{
     font-weight: bolder;
     display: inline;
 }
-.delete-atividade{
+.box-atividades .delete-atividade{
     border: none;
     background: var(--tea-green);
-    margin-left: 70%;
+    margin-left: 60% ;
 }
-
+.edit-atividade{
+    border: none;
+    background: var(--tea-green);
+    margin-left: 1%;
+}
 .descricao{
     font-size: .8rem;
     margin-bottom: 3%;
@@ -350,21 +354,18 @@ body.showLoginForm3 .popup3{
 
 
 @media screen and (max-width: 2150px) {
-    .delete-atividade{
+    .box-atividades .delete-atividade{
         margin-left: 60%;
     }
 }
-@media screen and (max-width: 1634px) {
-    .delete-atividade{
+@media screen and (max-width: 1650px) {
+    .box-atividades .delete-atividade{
         margin-left: 52%;
     }
 }
 @media screen and (max-width: 1634px) {
     .btn-atividades button{
         font-size: 2rem;
-    }
-    .delete-atividade{
-        margin-left: 52%;
     }
 }
 @media screen and (max-width: 1367px) {
@@ -376,13 +377,8 @@ body.showLoginForm3 .popup3{
     .btn-atividades button{
         font-size: 1.5rem;
     }
-    .delete-atividade{
+    .box-atividades .delete-atividade{
         margin-left: 38%;
-    }
-}
-@media screen and (max-width: 1067px) {
-    .delete-atividade{
-        margin-left: 30%;
     }
 }
 @media screen and (max-width: 992px) {
@@ -396,21 +392,16 @@ body.showLoginForm3 .popup3{
         font-size: 1rem;
     }
 }
-@media screen and (max-width: 903px) {
-    .delete-atividade{
+@media screen and (max-width: 926px) {
+    .box-atividades .delete-atividade{
         margin-left: 15%;
-    }
-}
-@media screen and (max-width: 795px) {
-    .delete-atividade{
-        margin-left: 8%;
     }
 }
 @media screen and (max-width: 768px) {
     .titulo_entrada{
         font-size: 2rem;
     }
-    .delete-atividade{
+    .box-atividades .delete-atividade{
         margin-left: 65%;
     }
     .container-atividades .box-atividades{
@@ -418,15 +409,12 @@ body.showLoginForm3 .popup3{
         width: 90vw ;
     }
 } 
-@media screen and (max-width: 695px) {
-    .delete-atividade{
+@media screen and (max-width: 620px) {
+    .box-atividades .delete-atividade{
         margin-left: 50%;
     }
 }
 @media screen and (max-width: 506px) {
-    .delete-atividade{
-        margin-left: 40%;
-    }
     .titulo_entrada{
         font-size: 1.8rem;
     }
@@ -437,8 +425,8 @@ body.showLoginForm3 .popup3{
         font-size: 2rem;
     }
 }
-@media screen and (max-width: 419px) {
-    .delete-atividade{
+@media screen and (max-width: 442px) {
+    .box-atividades .delete-atividade{
         margin-left: 30%;
     }
     .titulo_entrada{
@@ -446,16 +434,11 @@ body.showLoginForm3 .popup3{
     }
 }
 @media screen and (max-width: 363px) {
-    .delete-atividade{
-        margin-left: 25%;
+    .box-atividades .delete-atividade{
+        margin-left: 15%;
     }
     .btn-atividades button{
         font-size: .5rem;
-    }
-}
-@media screen and (max-width: 363px) {
-    .delete-atividade{
-        margin-left: 15%;
     }
 }
 @media screen and (max-width: 303px) {

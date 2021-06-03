@@ -104,11 +104,9 @@ function ListarAtividades() {
             for (let i = 0; i < Atividades.length; i++) {
                 // Atribuição via desestruturação                 ~ Separando o objeto horário em dois apartir do ":"
                 let [arrayHorarioPosterior, arrayMinutoPosterior] = Atividades[i].horario.split(":");
-
                 for (let j = 0; j < Atividades.length; j++) {
                     // Atribuição via desestruturação               ~ Separando o objeto horário em dois apartir do ":"
                     let [arrayHorarioAnterior, arrayMinutoAnterior] = Atividades[j].horario.split(":");
-
                     // ~ Verificações necessárias para fazer a ordenação de acordo com o horário ~ \\
                     // Caso a HORA do primeiro seja maior do que a HORA do segundo, "troque o índice" dos dois 
                     if (arrayHorarioAnterior > arrayHorarioPosterior) {
@@ -119,7 +117,7 @@ function ListarAtividades() {
 
                     // Caso a HORA do primeiro seja igual a HORA do segundo, verifique os MINUTOS
                     if (arrayHorarioAnterior == arrayHorarioPosterior) {
-                        if (arrayMinutoAnterior[j] > arrayMinutoPosterior[i]) {
+                        if (arrayMinutoAnterior > arrayMinutoPosterior) {
                             aux = Atividades[j]
                             Atividades[j] = Atividades[i]
                             Atividades[i] = aux;
@@ -136,8 +134,8 @@ function ListarAtividades() {
 <div class='col-12 col-md-4 box-atividades' >
 <h5>${ativ.nome}</h5>
 
-        <button class='delete-atividade' onclick="deletarAtividade(${ativ.id})" ><i class='fas fa-times'></i></button>
-        <button class='delete-atividade' onclick="openLoginForm3(${ativ.id})"><i class="far fa-edit"></i></button>
+    <button class='edit-atividade' onclick="openLoginForm3(${ativ.id})"><i class="far fa-edit"></i></button>
+    <button class='delete-atividade' onclick="deletarAtividade(${ativ.id})" ><i class='fas fa-times'></i></button>
         <div class='col-12 col-lg-8'>
           <p class='descricao'>
           ${ativ.descricao}
