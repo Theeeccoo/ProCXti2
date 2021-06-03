@@ -159,6 +159,9 @@ body{
     background: var(--middle-green);
     
 }
+.linha .disabled{
+    background: rgb(172, 164, 164);
+}
 /* ALTERAR PERFIL - Fim */
 
 /* RESPONSIVIDADE - Início */

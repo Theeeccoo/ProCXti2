@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- LINK DO BOOTSTRAP - CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -64,27 +65,27 @@
             <div class="row linha">
               <div class="col-12 col-sm-5">
                 <label for="">Nome</label>
-                <input type="text" />
+                <input id="txt_nome" type="text" />
               </div>
               <div class="col-12 col-sm-5">
                 <label for="">Email</label>
-                <input type="email" />
+                <input id="txt_email" type="email" />
               </div>
             </div>
             <div class="row linha">
               <div class="col-12 col-sm-5">
                 <label for="">UF</label>
-                <select name="" id=""></select>
+                <input name="" id="txt_uf" disabled="disabled" class="disabled"></select>
               </div>
               <div class="col-12 col-sm-5">
                 <label for="">Cidade</label>
-                <select name="" id=""></select>
+                <input name="" id="txt_city" disabled="disabled" class="disabled"></select>
               </div>
             </div>
             <div class="row linhaSenha">
               <div class="col-12 col-sm-5">
                 <label for="">Senha</label>
-                <input type="password" />
+                <input id="txt_senha" type="password" />
               </div>
             </div>
             <div class="row linha">
@@ -92,7 +93,7 @@
                 <button>Cancelar</button>
               </div>
               <div class="col-12 col-sm-5">
-                <button>Alterar</button>
+                <button id="alterar">Alterar</button>
               </div>
             </div>
           </div>
@@ -100,5 +101,6 @@
       </div>
     </main>
     <!-- BLOCO ALTERAR PERFIL - Fim -->
+	<script src="../www/scripts/alterar.js"></script>
   </body>
 </html>

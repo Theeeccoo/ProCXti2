@@ -79,7 +79,9 @@ function cadastrar() {
             email: email,
             senha:senha,
             uf:Uf,
-            city:City  
+            city:City  ,
+            lastSeen: null,
+            ActivitiesAlreadyCreated:0
 
         }
         const Users = JSON.parse(window.localStorage.getItem("users"))

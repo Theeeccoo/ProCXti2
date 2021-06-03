@@ -117,8 +117,8 @@
               (Onde você colocará o nome da sua atividade)</span
             ></label
           >
-          <input type="text" maxlength="30" />
-          <p class="aviso">*máximo de 30 caracteres</p>
+          <input type="text" maxlength="10" id="txt_nome_ativ"/>
+          <p class="aviso">*máximo de 10 caracteres</p>
         </div>
         <div class="element">
           <label for="desc"
@@ -126,8 +126,8 @@
               (Onde você colocará uma breve descrição da sua atividade)</span
             ></label
           >
-          <input type="text" maxlength="50" />
-          <p class="aviso">*máximo de 50 caracteres</p>
+          <input type="text" maxlength="20" id="txt_descricao_ativ"/>
+          <p class="aviso">*máximo de 20 caracteres</p>
         </div>
         <div class="element">
           <label for="horario"
@@ -136,10 +136,10 @@
               atividade)</span
             ></label
           >
-          <input type="time" />
+          <input type="time" id="txt_horario_ativ"/>
         </div>
         <div class="element">
-          <button type="button" class="btn-criar">Criar atividade</button>
+          <button type="button" onclick="criarAtividades()" class="btn-criar">Criar atividade</button>
         </div>
         <div class="element duvidas">
           <p>
@@ -151,43 +151,57 @@
       </div>
     </div>
 
+    <div class="popup-overlay3"></div>
+    <div class="popup3">
+      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+      <div class="form">
+        <div class="header">Atividades</div>
+        <div class="element">
+          <label for="ativname"
+            >Nome da atividade<span id="span1" class="a">
+              (Onde você colocará o nome da sua atividade)</span
+            ></label
+          >
+          <input type="text" maxlength="10" id="txt_nome_ativ2"/>
+          <p class="aviso">*máximo de 10 caracteres</p>
+        </div>
+        <div class="element">
+          <label for="desc"
+            >Descrição<span id="span2" class="a">
+              (Onde você colocará uma breve descrição da sua atividade)</span
+            ></label
+          >
+          <input type="text" maxlength="20" id="txt_descricao_ativ2"/>
+          <p class="aviso">*máximo de 20 caracteres</p>
+        </div>
+        <div class="element">
+          <label for="horario"
+            >Horário<span id="span3" class="a">
+              (Onde você colocará um horário que deseja fazer sua
+              atividade)</span
+            ></label
+          >
+          <input type="time" id="txt_horario_ativ2"/>
+        </div>
+        <div id="chave_edit" hidden></div>
+        <div class="element">
+          <button type="button" onclick="editarAtividade()" class="btn-criar">Editar atividade</button>
+        </div>
+        <div class="element duvidas">
+          <p>
+            Duvidas?<button id="btn-duvida">
+              <i class="far fa-question-circle"></i>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
     <main>
+      <h1 id="titulo_atividades" ></h1>
       <div class="container-atividades">
-        <div class="row linha">
-          <div class="col-12 col-md-4 box-atividades">
-            <h5>Nome da atividade</h5>
-            <button class="delete-atividade"><i class="fas fa-times"></i></button>
-            <div class="col-12 col-lg-8">
-              <p class="descricao">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                eum amet velit recusandae ut esse veniam aut itaque perferendis
-                nobis minima iusto, sapiente explicabo magnam nesciunt doloribus
-                enim reiciendis ipsam! Est eum aliquam animi ratione quidem optio
-                vel obcaecati repellat totam ab accusantium beatae, numquam
-                corrupti assumenda accusamus autem quam.
-              </p>
-            </div>
-            <h6>Horário:</h6>
-            <p class="horario">14:59</p>
-            <input type="checkbox" name="" id="" class="check" />
-          </div>
-          <div class="col-12 col-md-4 box-atividades">
-            <h5>Nome da atividade</h5>
-            <button class="delete-atividade"><i class="fas fa-times"></i></button>
-            <div class="col-12 col-lg-8">
-              <p class="descricao">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                eum amet velit recusandae ut esse veniam aut itaque perferendis
-                nobis minima iusto, sapiente explicabo magnam nesciunt doloribus
-                enim reiciendis ipsam! Est eum aliquam animi ratione quidem optio
-                vel obcaecati repellat totam ab accusantium beatae, numquam
-                corrupti assumenda accusamus autem quam.
-              </p>
-            </div>
-            <h6>Horário:</h6>
-            <p class="horario">14:59</p>
-            <input type="checkbox" name="" id="" class="check" />
-          </div>
+        <div class="row linha" id="Atividades">
+         
+        
 
       </div>
       <div class="container-recompensa">

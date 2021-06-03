@@ -18,14 +18,21 @@ if(Email == ''|| Senha == ''){
 }else{
 
     const users = JSON.parse(window.localStorage.getItem("users"));
-
+    let newUser = []
    if(users != null){
-    users.map(user =>{
+   newUser =  users.map(user =>{
     if(user.email == Email && user.senha == Senha){
         localStorage.setItem('SessionID',JSON.stringify(user.id));
-                
-          window.location.href= 'perfil.html'
+        const data = new Date();
+        
+        const dia = data.getDate()
+        const mes = data.getMonth()
+        const ano = data.getFullYear()
+        dataCompleta = `${dia}/${mes}/${ano}`
+          return {...user,lastSeen:dataCompleta}
 
+    }else{
+      return user
     }
 
    })
@@ -41,7 +48,10 @@ if(Email == ''|| Senha == ''){
       timer: 1500,
 
     })
-  } 
+  } else{
+    localStorage.setItem('users',JSON.stringify(newUser));
+    window.location.href= 'perfil.html'
+  }
 }
 
 }
