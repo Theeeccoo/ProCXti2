@@ -11,6 +11,7 @@ function openLoginForm2(){
     document.body.classList.add("showLoginForm2")
 }
 function openLoginForm3(id){
+   
     const sessionId = JSON.parse(window.localStorage.getItem(`SessionID`))
     const Atividades = JSON.parse(window.localStorage.getItem(`atividades${sessionId}`))
 
@@ -23,7 +24,7 @@ const index = Atividades.findIndex(ativ => ativ.id == id)
     document.getElementById("txt_horario_ativ2").value = Atividades[index].horario
 
 
-    secretInput.innerHTML =  `<input type="time" id="txt_secret" name="${id}"/>`
+    secretInput.innerHTML =  `<input type="text" id="txt_secret" name="${id}"/>`
 
 }
 // MODAL POPUP - Fim

@@ -2,11 +2,31 @@ function save_user(name, senha, email){
     const SessionID = JSON.parse(window.localStorage.getItem('SessionID'))
     var userdata = JSON.parse(window.localStorage.getItem('users'));
     const index = userdata.findIndex(user => user.id == SessionID)
-    if(name != "") userdata[index].name = name;
-    if(senha != "") userdata[index].senha = senha;
-    if(email != "") userdata[index].email = email;
-    localStorage.setItem('users',JSON.stringify(userdata));
-}
+    if(name == '' || senha == '' || email ==''){
+        Swal.fire({
+
+            icon: 'warning',
+            title: `Preencha todos os campos`,
+            showConfirmButton: false,
+            timer: 1500,
+    
+        })
+    }else{
+        userdata[index].name = name;
+        userdata[index].senha = senha;
+        userdata[index].email = email;
+       localStorage.setItem('users',JSON.stringify(userdata));
+       Swal.fire({
+
+        icon: 'success',
+        title: `Usuario alterado com sucesso`,
+        showConfirmButton: false,
+        timer: 1500,
+
+    })
+   }
+    }
+   
 
 function ListarUsuario(){
     const SessionID = JSON.parse(window.localStorage.getItem("SessionID"));
