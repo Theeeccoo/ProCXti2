@@ -53,10 +53,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./index.html"
+                  >Home</a
+                >
                 <a class="nav-link" href="./contato.html">Equipe</a>
                 <a class="nav-link ologin" href="./login.html">Login</a>
-                <a class="nav-link" onclick="openLoginForm2()" href="#">Cadastrar</a>
+                <a class="nav-link" onclick="openLoginForm2()" href="#"
+                  >Cadastrar</a
+                >
               </div>
             </div>
           </div>
@@ -70,18 +77,16 @@
       <div class="container">
         <div class="row">
           <div class="col-12 tituloCima">
-            <h1 class="titulo">Procrastinar</h1>
+            <h1 class="titulo">Deixar para depois</h1>
           </div>
         </div>
         <div class="row acima">
           <div class="col-12 col-lg-6 texto">
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore
-              amet reprehenderit, inventore rem sapiente optio accusamus hic.
-              Odit suscipit est vitae dolorem ipsam quis facilis, reiciendis eos
-              quae temporibus sit optio vel voluptates soluta fuga nam
-              obcaecati. Assumenda, a expedita molestias illo in, fuga,
-              excepturi fugiat porro beatae nam rerum?
+              Deixar atividades importantes para o último momento possível, mais
+              conhecido como procrastinar, tornou-se um ato muito comum entre as
+              pessoas. Junto com esse ato vieram suas consequências, como
+              estresse, ansiedade e baixa performance.
             </p>
           </div>
           <hr class="separador" />
@@ -119,10 +124,11 @@
         <div class="row divAcima">
           <div class="col-12 col-lg-6 texto">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repellendus deleniti sunt ducimus aliquam delectus officia, illo
-              nulla? Numquam aliquid necessitatibus, optio, vero temporibus
-              magnam excepturi eaque, alias suscipit nemo mollitia!
+              Pensando nas pessoas que possuem o costume de procrastinar,
+              criamos o ProCX. Uma ferramenta funcional que auxiliará a
+              organização das suas atividades de uma maneira bem visual e de
+              fácil entendimento, e com recompensa customizável. E o melhor,
+              100% gratuito.
             </p>
           </div>
           <div
@@ -131,10 +137,10 @@
             data-aos-duration="4000"
           >
             <img
-              src="../www/images/localDistrator.jpg"
+              src="../www/images/imagemAtividades1.jpeg"
               class="img-fluid"
               alt="Placeholder"
-              title="Imagem gratuita retirada do site pexels.com"
+              title="Imagem da aba de atividades do nosso site"
             />
           </div>
         </div>
@@ -154,10 +160,10 @@
           </div>
           <div class="col-12 col-lg-6 textoDireita">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repellendus deleniti sunt ducimus aliquam delectus officia, illo
-              nulla? Numquam aliquid necessitatibus, optio, vero temporibus
-              magnam excepturi eaque, alias suscipit nemo mollitia!
+              Há também a possibilidade de ver seu desempenho diário, onde será
+              informado quantas atividades foram registradas, e quantas dessas
+              foram feitas. Além de receber feedbacks e dicas de como organizar
+              melhor seus horários.
             </p>
           </div>
         </div>
@@ -201,18 +207,24 @@
         </div>
         <div class="element selecao">
           <label for="selecao">UF</label>
-          <select name="#" id="select_uf" class="selector" onchange="getCities(event)">
-            
-            
+          <select
+            name="#"
+            id="select_uf"
+            class="selector"
+            onchange="getCities(event)"
+          ></select>
+        </div>
+        <div class="element selecao">
+          <label for="selecao">Cidade</label>
+          <select
+            name="#"
+            id="select_city"
+            class="selector"
+            onchange="setUf(event)"
+          >
+            <option value="#" id="selecao">Selecione a UF</option>
           </select>
         </div>
-        <div class="element selecao">  
-          <label for="selecao">Cidade</label>
-          <select name="#" id="select_city" class="selector" onchange="setUf(event)" >
-            <option value="#" id="selecao">Selecione a UF</option>
-           
-          </select>
-        </div>  
         <div class="element">
           <button type="button" onclick="cadastrar()">Cadastrar</button>
         </div>
