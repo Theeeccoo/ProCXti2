@@ -313,12 +313,14 @@ body.showLoginForm3 .popup3{
 .box-atividades .delete-atividade{
     border: none;
     background: var(--tea-green);
-    margin-left: 60% ;
+    /* margin-left: 60%; */
+    float: right;
 }
 .edit-atividade{
     border: none;
     background: var(--tea-green);
-    margin-left: 1%;
+    margin-left: 2px;
+
 }
 .descricao{
     font-size: .8rem;
@@ -353,33 +355,17 @@ body.showLoginForm3 .popup3{
 
 
 
-@media screen and (max-width: 2150px) {
-    .box-atividades .delete-atividade{
-        margin-left: 70%;
-    }
-}
-@media screen and (max-width: 1650px) {
-    .box-atividades .delete-atividade{
-        margin-left: 60%;
-    }
-}
 @media screen and (max-width: 1634px) {
     .btn-atividades button{
         font-size: 2rem;
     }
 }
-@media screen and (max-width: 1279px) {
-    .box-atividades .delete-atividade{
-        margin-left: 50%;
-    }
-}
+
 @media screen and (max-width: 1196px) {
     .btn-atividades button{
         font-size: 1.5rem;
     }
-    .box-atividades .delete-atividade{
-        margin-left: 45%;
-    }
+
 }
 @media screen and (max-width: 992px) {
     .titulo_entrada{
@@ -388,37 +374,17 @@ body.showLoginForm3 .popup3{
     .btn-atividades button{
         font-size: 1rem;
     }
-    .box-atividades .delete-atividade{
-        margin-left: 42%;
-    }
+
 }
-@media screen and (max-width: 926px) {
-    .box-atividades .delete-atividade{
-        margin-left: 40%;
-    }
-}
-@media screen and (max-width: 862px) {
-    .box-atividades .delete-atividade{
-        margin-left: 30%;
-    }
-}
+
+
 @media screen and (max-width: 768px) {
     .titulo_entrada{
         font-size: 2rem;
     }
-    .box-atividades .delete-atividade{
-        margin-left: 70%;
-    }
-    .container-atividades .box-atividades{
-        margin: 5% auto;
-        width: 90vw ;
-    }
+
 } 
-@media screen and (max-width: 620px) {
-    .box-atividades .delete-atividade{
-        margin-left: 60%;
-    }
-}
+
 @media screen and (max-width: 506px) {
     .titulo_entrada{
         font-size: 1.8rem;
@@ -429,22 +395,16 @@ body.showLoginForm3 .popup3{
     .titulo-recompensa{
         font-size: 2rem;
     }
-    .box-atividades .delete-atividade{
-        margin-left: 55%;
-    }
+
 }
 @media screen and (max-width: 442px) {
     .titulo_entrada{
         font-size: 1.4rem;
     }
-    .box-atividades .delete-atividade{
-        margin-left: 50%;
-    }
+
 }
 @media screen and (max-width: 380px) {
-    .box-atividades .delete-atividade{
-        margin-left: 35%;
-    }
+
     .btn-atividades button{
         font-size: .5rem;
     }
@@ -453,9 +413,7 @@ body.showLoginForm3 .popup3{
     .titulo_entrada{
         font-size: 1rem;
     }
-    .box-atividades .delete-atividade{
-        margin-left: 28%;
-    }
+
 }
 /* RESPOSIVIDADE MODAL - Início */
 @media screen and (max-width: 546px) {
