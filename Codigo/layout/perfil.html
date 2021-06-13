@@ -59,7 +59,7 @@
               <div class="navbar-nav">
                 <a class="nav-link active"
                 aria-current="page" href="#">Atividades</a>
-                <a class="nav-link" href="#">Desempenho</a>
+                <a class="nav-link" href="./desempenho.html">Desempenho</a>
                 <div class="btn-group" id="dropdown-btn">
                   <button
                     type="button"
@@ -90,7 +90,7 @@
       </div>
     </div>
     <!-- NAVBAR - Fim -->
-
+    <main>
     <div class="primeiraLinha">
       <div class="containersaudacao">
         <div class="row">
@@ -195,7 +195,7 @@
         </div>
       </div>
     </div>
-    <main>
+
       <h1 id="titulo_atividades" ></h1>
       <div class="container-atividades">
         <div class="row linha" id="Atividades">
@@ -206,8 +206,46 @@
       <div class="container-recompensa">
         <h1 class="titulo-recompensa">Recompensa</h1>
       </div>
+      <div class="primeiraLinha">
+        <div class="containersaudacao">
+            <div class="col-12 col-sm-3 btn-recompensa">
+              <button onclick="openLoginForm4()"">Criar recompensa</button>
+            </div>
+        </div>
+      </div>
+  
+      <!-- Modal recompensa- Início -->
+      <div class="popup-overlay4"></div>
+      <div class="popup4">
+        <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+        <div class="form">
+          <div class="header">Sua recompensa</div>
+          <div class="element">
+            <p class="mensagem">Como sabemos da importância da motivação para fazer suas atividades, daremos a possibilidade de você escolher qual será a SUA recompensa. </p>
+            <p class="aviso">Seus dias de glória chegaram!</p>
+          </div>
+          <div class="element">
+            <label for="ativname"
+              >Minha recompensa:
+              </label
+            >
+            <input type="text" maxlength="15" id="txt_nome_ativ" placeholder="Jogar Vídeo Game"/>
+            <p class="aviso">*Só poderá ter acesso à recompensa depois que terminar suas atividades</p>
+          </div>
+
+          <div class="element">
+            <button type="button" onclick="criarRecompensa()" class="btn-criar">Salvar recompensa</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="box-recompensa">
+          <h1>JOGAR VIDEOGAME</h1>
+          <input type='checkbox' class='check' />
+        </div>  
+      </div>
     </main>
-    <!-- Modal Atividade - Fim -->
+    <!-- Modal recompensa- Fim -->
   </body>
   <script src="../www/scripts/perfil.js"></script>
 </html>

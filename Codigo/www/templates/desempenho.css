@@ -1,0 +1,135 @@
+/* ROOT */
+:root{
+    --mint-cream: #F1FFFA;
+    --tea-green: #CCFCCB;
+    --celadon: #96E6B3;
+    --middle-green: #568259;
+    --ebony: #464E47;
+    --cinza-escuro: #353839;
+}
+
+
+/* GLOBAL */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: var(--mint-cream);
+}
+
+/* NAVBAR - Início */
+
+.container-navbar{
+    background: var(--celadon);
+    font-weight: normal;
+    justify-content: space-between;
+}
+
+.navbar{
+    background: var(--celadon);
+    display: flex;
+    justify-content: center;
+}
+
+.ologin{
+    margin-left: 150px;
+}
+
+.nav-link:hover{
+    background: var(--tea-green);
+    color: black;
+}
+
+.nav-link a:focus{
+    color: var(--cinza-escuro);
+}
+
+.navbar-nav .active{
+    border-bottom: 2px solid brown;
+}
+
+.container-fluid .navbar-brand{
+    margin-right: 25%;
+    padding: 20px;
+    color: var(--tea-green) !important;
+    text-decoration: none;
+    background: var(--ebony);
+}
+.container-fluid .navbar-brand:hover{
+    color: var(--tea-green);
+}
+
+.nav-link, .nav-link a{
+    padding: 10px;
+    color: var(--cinza-escuro);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+/* NAVBAR - Fim */
+
+/* DESEMPENHo - Início */
+.voltar{
+    margin-top: 2%;
+}
+.voltar a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+.voltar i{
+    margin-right: 10px;
+    animation: arrowleft .5s alternate infinite;
+    font-size: 1.2rem;
+}
+.voltar button{
+    background: var(--mint-cream);
+    border: none;
+}
+
+.dicas h3{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.listagem{
+    margin-left: 5vw;
+}
+.listagem ul{
+    font-size: 1.1rem;
+}
+.listagem li{
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1095px) {
+    .listagem{
+        margin-left: 2vw;
+    }
+    
+}
+@media screen and (max-width: 607px) {
+    .listagem{
+        margin-left: 0;
+    }
+    
+}
+
+
+/*  DESEMPENHO- Fim */
+
+
+/* KEYFRAME animação - Início */
+@keyframes arrowleft{
+    0%{
+        transform: translateX(-.5rem);
+    }
+    100%{
+        transform: translateX(.5rem);        
+    }
+}
+/* KEYFRAME animação - Fim */

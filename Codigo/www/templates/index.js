@@ -2,11 +2,6 @@
 function openLoginForm(){
     document.body.classList.add("showLoginForm")
 }
-function closeLoginForm(){
-    document.body.classList.remove("showLoginForm") 
-    document.body.classList.remove("showLoginForm2") 
-    document.body.classList.remove("showLoginForm3")
-}
 function openLoginForm2(){
     document.body.classList.add("showLoginForm2")
 }
@@ -26,5 +21,14 @@ const index = Atividades.findIndex(ativ => ativ.id == id)
 
     secretInput.innerHTML =  `<input type="text" id="txt_secret" name="${id}"/>`
 
+}
+function openLoginForm4(){
+    document.body.classList.add("showLoginForm4")
+}
+function closeLoginForm(){
+    document.body.classList.remove("showLoginForm") 
+    document.body.classList.remove("showLoginForm2") 
+    document.body.classList.remove("showLoginForm3")
+    document.body.classList.remove("showLoginForm4")
 }
 // MODAL POPUP - Fim
