@@ -449,6 +449,7 @@ body.showLoginForm4 .popup4{
 }
 /* MAIN Recompensa - Início */
 .container-recompensa{
+    margin-top: 120px;
     display:flex;
     justify-content: center;
 }
@@ -459,13 +460,11 @@ body.showLoginForm4 .popup4{
 .box-recompensa{
     border-radius: 20px;
     background: var(--celadon);
-    opacity: 1;
+    opacity: .4;
     height: 100%;
     margin-bottom: 1vh;
 }
-.pao{
-    opacity: .4;
-}
+
 .box-recompensa h1{
     font-weight: bolder;
     padding: 2% 0;

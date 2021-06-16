@@ -27,6 +27,129 @@ function ValidarSession() {
 
 ValidarSession()
 
+function getMonthDays(m) {
+
+    if (m == 3 || m == 5 || m == 8 || m == 10) {
+        return 30
+    } else if (m == 0 || m == 2 || m == 4 || m == 6 || m == 7 || m == 9 || m == 11) {
+        return 31
+    } else if (m == 1) {
+        return 28
+    }
+
+
+}
+
+
+function verificarDiasData() {
+    
+    Users = JSON.parse(window.localStorage.getItem("users"));
+    UsuarioAtual = Users[SessionID]
+    ativsFeitas = JSON.parse(window.localStorage.getItem(`atividadesRealizadas${SessionID}`));
+
+    ativs = JSON.parse(window.localStorage.getItem(`atividades${SessionID}`));
+
+    if (ativs == null || ativs == [] || ativsFeitas == null) {
+        return
+    } else {
+
+        var data = new Date();
+        const dia = data.getDate()
+        const mes = data.getMonth()
+        const ano = data.getFullYear()
+        dataAtual = `${dia}/${mes}/${ano}`
+        let cont = 0
+        
+        arrayLastSeen = UsuarioAtual.lastSeen.split("/")
+        const diaEsperado = Number(arrayLastSeen[0]) + 1
+        const dataEsperada = `${diaEsperado}/${arrayLastSeen[1]}/${arrayLastSeen[2]}`
+
+        newAtivsFeitas = [...ativsFeitas]
+        
+        if (UsuarioAtual.lastSeen != dataAtual && dataAtual != dataEsperada) {
+           const newObjj = ativsFeitas[ativsFeitas.length - 1]
+             newObjj.ArrayAtividadesFeitas.map(atv => { atv.realizada = false })
+            if (Number(arrayLastSeen[2]) == ano && Number(arrayLastSeen[1]) != mes) {
+
+                if (mes - Number(arrayLastSeen[1]) == 1) {
+
+
+                    cont += 30 - Number(arrayLastSeen[0]) + dia
+
+
+                    for (let i = Number(arrayLastSeen[0]) + 1; i <= getMonthDays(arrayLastSeen[1]); i++) {
+
+
+                        newAtivsFeitas.push({
+                            ...newObjj, data: `${i}/${arrayLastSeen[1]}/${arrayLastSeen[2]}`
+                        })
+
+                    }
+                    for (let i = 1; i < dia ; i++) {
+                        newAtivsFeitas.push({
+                            ...newObjj, data: `${i}/${mes}/${ano}`
+                        })
+                    }
+
+                    console.log(newAtivsFeitas,'1')
+                    localStorage.setItem(`atividadesRealizadas${SessionID}`,JSON.stringify(newAtivsFeitas));
+                } else {
+
+                    let mesesFaltando = []
+                    for (let i = Number(arrayLastSeen[1]); i < mes; i++) {
+                        mesesFaltando.push(i)
+                    }
+                     
+                    mesesFaltando.map(mess => {
+                        if (mess == mesesFaltando[0]) {
+                            
+                            for (let i = Number(arrayLastSeen[0]) + 1; i <= getMonthDays(mesesFaltando[0]); i++) {
+                                newAtivsFeitas.push({
+                                    ...newObjj, data: `${i}/${mess}/${arrayLastSeen[2]}`
+                                })
+                            }
+
+
+
+                        
+                        } else {
+                            for (let i = 1; i <= getMonthDays(mess); i++) {
+                                newAtivsFeitas.push({
+                                    ...newObjj, data: `${i}/${mess}/${arrayLastSeen[2]}`
+                                })
+                            }
+
+                            
+                        }
+
+                    })
+
+                    for (let i = 1; i < dia ; i++) {
+                        newAtivsFeitas.push({
+                            ...newObjj, data: `${i}/${mes}/${arrayLastSeen[2]}`
+                        })
+
+                    }
+                    localStorage.setItem(`atividadesRealizadas${SessionID}`,JSON.stringify(newAtivsFeitas));
+                    console.log(newAtivsFeitas,'2')
+                }
+            } else if (Number(arrayLastSeen[2]) == ano && Number(arrayLastSeen[1]) == mes) {
+                for (let i = Number(arrayLastSeen[0]) + 1; i < dia ; i++) {
+                    newAtivsFeitas.push({
+                        ...newObjj, data: `${i}/${mes}/${arrayLastSeen[2]}`
+                    })
+                    
+                }
+                localStorage.setItem(`atividadesRealizadas${SessionID}`,JSON.stringify(newAtivsFeitas));
+                console.log(newAtivsFeitas,'3')
+            }
+         
+        }
+
+    }
+}
+verificarDiasData()
+
 function verificarData() {
     Users = JSON.parse(window.localStorage.getItem("users"));
     UsuarioAtual = Users[SessionID]
@@ -37,8 +160,8 @@ function verificarData() {
     const mes = data.getMonth()
     const ano = data.getFullYear()
     dataAtual = `${dia}/${mes}/${ano}`
-
-    if (UsuarioAtual.lastSeen != 'dataAtual') {
+    
+    if (UsuarioAtual.lastSeen != dataAtual) {
         ativs = JSON.parse(window.localStorage.getItem(`atividades${SessionID}`));
 
         if (ativs != null) {
@@ -128,6 +251,7 @@ function ListarAtividades() {
         }
         titulo.innerHTML = ''
         let obj = ''
+        localStorage.setItem(`atividades${SessionID}`,JSON.stringify(Atividades));
         Atividades.map(ativ => {
 
             obj += `
@@ -143,7 +267,7 @@ function ListarAtividades() {
         </div>
         <h6>Horário:</h6>
         <p class='horario'>${ativ.horario}</p>
-        <input type='checkbox' onchange="isChecked(${ativ.id})" name='' id='${ativ.id}' class='check' />
+        <input type='checkbox' ${ativ.checked?'checked':''} onchange="isChecked(${ativ.id})" name='' id='${ativ.id}' class='check' />
         </div> ` }
 
         )
@@ -153,6 +277,7 @@ function ListarAtividades() {
 
 
     }
+    mostrarRecompensa();
 }
 ListarAtividades()
 
@@ -221,6 +346,7 @@ function isChecked(Id) {
     let atividadeIndex = Atividades.findIndex(ativ => ativ.id == Id)//acha o indice da atividade no array    
     Atividades[atividadeIndex] = { ...Atividades[atividadeIndex], checked: !Atividades[atividadeIndex].checked }//muda dentro do array o atributo checked do array
     localStorage.setItem(`atividades${SessionID}`, JSON.stringify(Atividades));//salvando no local storage
+    mostrarRecompensa();
     console.log(Atividades)//mostra se está checkado ou não
 }
 
@@ -286,7 +412,12 @@ function criarAtividades() {
 
       
     }
+
 }
+function logoff(){
+    localStorage.setItem(`SessionID`, null);
+}
+
 // Função que adicionará o "Card" de recompensa à tela
 function criarRecompensa(){
     let recompensa = document.getElementById('txt_nome_recomp').value; // Variável que receberá o valor digitado pelo usuário
@@ -302,7 +433,7 @@ function criarRecompensa(){
         })
     }else{ // Do contrário, preencha com o valor dado pelo usuário
         let texto = `
-        <div class="box-recompensa pao">
+        <div class="box-recompensa" id="caixa">
         <h1>${recompensa}</h1>
         <input type="checkbox" class="check" id="checagem" onclick="checkRecompensa()"/>
         </div>  
@@ -312,12 +443,30 @@ function criarRecompensa(){
         sucessoRecomp();
     }
     document.getElementById('txt_nome_recomp').value = ''; // Zerando o valor no input
+    mostrarRecompensa();
 }
+// Função que 
 function mostrarRecompensa(){
-    // const recompensaArea = document.getElementById('box-recompensa');
-    //TODO - SE nº de atividades == nº de atividades feitas
-    // recompensaArea.remove('.pao'); 
-    // document.getElementById('txt_nome_recomp').disabled = false;
+    let cont = 0;
+    const recompensaArea = document.getElementById('caixa');
+    let Atividades = JSON.parse(window.localStorage.getItem(`atividades${SessionID}`));
+    Atividades.map(ativ => {
+        if(ativ.checked){
+            cont++;
+        }
+    });
+    if(cont == Atividades.length){
+        if(recompensaArea != null){
+            recompensaArea.style.opacity = "1"; 
+            document.getElementById('checagem').disabled = false;
+            console.log("AAAB");
+        }
+    }else{
+        if (recompensaArea != null){
+            recompensaArea.style.opacity = ".55"; 
+            document.getElementById('checagem').disabled = true; 
+        }
+    }
 }
 // Função que tira da tela o "Card" quando o mesmo é "checado" (Clicar no botão check)
 function checkRecompensa(){
@@ -325,7 +474,7 @@ function checkRecompensa(){
     recompensaArea.innerHTML = ''; // Esvaziando o espaço da tela
 }
 
-// Função do "SWAL" que mostrará que a recompensa foi geristrada com sucesso.
+// Função do "SWAL" que mostrará que a recompensa foi registrada com sucesso.
 function sucessoRecomp() {
     Swal.fire({
 
@@ -337,10 +486,16 @@ function sucessoRecomp() {
     })
     closeLoginForm();
 }
+// Métodos que mostrarão a mensagem a frente dos inputs dos modais de atividade
 $(document).ready(function () {
     $('#btn-duvida').click(function () {
         $('#span1').toggleClass('frente');
         $('#span2').toggleClass('frente');
         $('#span3').toggleClass('frente');
+    })
+    $('#btn-duvida2').click(function () {
+        $('#span4').toggleClass('frente');
+        $('#span5').toggleClass('frente');
+        $('#span6').toggleClass('frente');
     })
 })
