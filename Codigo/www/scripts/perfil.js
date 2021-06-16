@@ -287,8 +287,56 @@ function criarAtividades() {
       
     }
 }
+// Função que adicionará o "Card" de recompensa à tela
+function criarRecompensa(){
+    let recompensa = document.getElementById('txt_nome_recomp').value; // Variável que receberá o valor digitado pelo usuário
+    const recompensaArea = document.getElementById('box-recompensa'); // Variável responsável pela div 
+    if(recompensa == ''){ // Caso input vazio, "SWAL" de: preencha os campos
+        Swal.fire({
 
+            icon: 'warning',
+            title: 'Preecha todos os campos',
+            showConfirmButton: false,
+            timer: 1500,
 
+        })
+    }else{ // Do contrário, preencha com o valor dado pelo usuário
+        let texto = `
+        <div class="box-recompensa pao">
+        <h1>${recompensa}</h1>
+        <input type="checkbox" class="check" id="checagem" onclick="checkRecompensa()"/>
+        </div>  
+        `;
+        recompensaArea.innerHTML = texto; 
+        document.getElementById('checagem').disabled = true; 
+        sucessoRecomp();
+    }
+    document.getElementById('txt_nome_recomp').value = ''; // Zerando o valor no input
+}
+function mostrarRecompensa(){
+    // const recompensaArea = document.getElementById('box-recompensa');
+    //TODO - SE nº de atividades == nº de atividades feitas
+    // recompensaArea.remove('.pao'); 
+    // document.getElementById('txt_nome_recomp').disabled = false;
+}
+// Função que tira da tela o "Card" quando o mesmo é "checado" (Clicar no botão check)
+function checkRecompensa(){
+    const recompensaArea = document.getElementById('box-recompensa');
+    recompensaArea.innerHTML = ''; // Esvaziando o espaço da tela
+}
+
+// Função do "SWAL" que mostrará que a recompensa foi geristrada com sucesso.
+function sucessoRecomp() {
+    Swal.fire({
+
+        icon: 'success',
+        title: `Recompensa registrada com sucesso`,
+        showConfirmButton: false,
+        timer: 1500,
+
+    })
+    closeLoginForm();
+}
 $(document).ready(function () {
     $('#btn-duvida').click(function () {
         $('#span1').toggleClass('frente');

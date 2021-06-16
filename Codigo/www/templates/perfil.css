@@ -459,8 +459,12 @@ body.showLoginForm4 .popup4{
 .box-recompensa{
     border-radius: 20px;
     background: var(--celadon);
+    opacity: 1;
     height: 100%;
     margin-bottom: 1vh;
+}
+.pao{
+    opacity: .4;
 }
 .box-recompensa h1{
     font-weight: bolder;
