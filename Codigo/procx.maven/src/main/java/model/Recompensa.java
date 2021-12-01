@@ -12,16 +12,16 @@ public class Recompensa {
 	// Data declaration
 	private String descricao;
 	private int id;
-	private int idAtividade;
+	private int idUsuario;
 	
 	// 							Class constructor
 	/* Creates a new instance of User based on the information sent by parameters
 	* @param Given information on registration
 	*/	
-	Recompensa(String descricao, int id, int idAtividade){
+	public Recompensa(String descricao, int id, int idUsuario){
 			setDescricao(descricao);
 			setId(id);
-			setIdAtividade(idAtividade);		
+			setIdUsuario(idUsuario);		
 	}
 	
 	// 							Setters
@@ -43,8 +43,8 @@ public class Recompensa {
 	/**
 	 * @param idAtividade the idAtividade to set
 	 */
-	public void setIdAtividade(int idAtividade) {
-		this.idAtividade = idAtividade;
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	// 							Getters
@@ -66,8 +66,8 @@ public class Recompensa {
 	/**
 	 * @return the idAtividade
 	 */
-	public int getIdAtividade() {
-		return idAtividade;
+	public int getIdUsuario() {
+		return idUsuario;
 	}
 
 }

@@ -1,46 +1,71 @@
+let id = location.href.split("#")[1];
+
+function redirect(){
+    window.location.replace("http://127.0.0.1:5500/Codigo/procx.maven/src/main/resources/layout/perfil.html#" + id);
+}
+
 function save_user(name, senha, email){
-    const SessionID = JSON.parse(window.localStorage.getItem('SessionID'))
-    var userdata = JSON.parse(window.localStorage.getItem('users'));
-    const index = userdata.findIndex(user => user.id == SessionID)
+    
     if(name == '' || senha == '' || email ==''){
         Swal.fire({
 
             icon: 'warning',
-            title: `Preencha todos os campos`,
+            title: `Preencha todos os campos corretamente`,
             showConfirmButton: false,
             timer: 1500,
     
         })
     }else{
-        userdata[index].name = name;
-        userdata[index].senha = senha;
-        userdata[index].email = email;
-       localStorage.setItem('users',JSON.stringify(userdata));
-       Swal.fire({
 
-        icon: 'success',
-        title: `Usuario alterado com sucesso`,
-        showConfirmButton: false,
-        timer: 1500,
+        var dados = {id: id, email: email, nome: name, senha: senha};
+        url = `http://localhost:5432/usuario/${id}`;
+        $.ajax({
+            dataType: "text",
+            url: url,
+            type: "POST",
+            data: dados,
+            header: { "Content-Type": "application/text" },
+        }).done(function(){
 
-    })
+            Swal.fire({
+    
+                icon: 'success',
+                title: `Dados alterados com sucesso`,
+                showConfirmButton: false,
+                timer: 1500,
+    
+            })
+        
+        }).fail(function (error) {
+            console.error(error);
+        })
    }
-    }
+}
    
 
 function ListarUsuario(){
-    const SessionID = JSON.parse(window.localStorage.getItem("SessionID"));
-    const Users = JSON.parse(window.localStorage.getItem("users"));
+    var dados = {id: id};
+    url = `http://localhost:5432/user/${id}`;
+    $.ajax({
+        dataType: "text",
+        url: url,
+        type: "GET",
+        data: dados,
+        header: { "Content-Type": "application/text" },
+    }).done(function(data){
+        var userData;
+            
+        userData = JSON.parse(data);
 
-const User = Users[SessionID]
+        document.getElementById('txt_nome').value = userData.nome 
+        document.getElementById('txt_email').value = userData.email 
+        document.getElementById('txt_senha').value = userData.senha
+        //document.getElementById('txt_uf').value = User.uf
+        //document.getElementById('txt_city').value = User.city
 
-    document.getElementById('txt_nome').value = User.name 
-    document.getElementById('txt_email').value = User.email 
-    document.getElementById('txt_senha').value = User.senha
-    document.getElementById('txt_uf').value = User.uf
-    document.getElementById('txt_city').value = User.city
-
-
+    }).fail(function (error) {
+            console.error(error);
+    })
 }
 
 document.getElementById('alterar').addEventListener("click",function(){

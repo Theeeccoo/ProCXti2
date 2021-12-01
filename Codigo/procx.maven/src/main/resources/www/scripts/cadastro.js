@@ -37,7 +37,7 @@ function getCities(event) {
     fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${valor}/municipios`).then(estados => estados.json())
         .then(data => {
 
-        
+
 
             cities = document.getElementById('select_city');
 
@@ -55,76 +55,54 @@ function setUf(event) {
 
 }
 
+
 function cadastrar() {
 
-    const nome = document.getElementById("txt_nome").value
-    const email = document.getElementById("txt_email").value
-    const senha = document.getElementById("txt_senha").value
+    var nameValidator = /^[a-záàâãéèêíïóôõöüúçñ' ]{5,}$/i;
+    const nome = document.getElementById("txt_nome").value;
+    const email = document.getElementById("txt_email").value;
+    const senha = document.getElementById("txt_senha").value;
+    if (nome == '' || (!nameValidator.test(nome)) || (email == '' || ((email.includes("@") == false) || (email.includes(".com") == false))) || senha == '' || Uf == undefined || City == undefined) {
 
-    if (nome == '' || email == '' || senha == '' || Uf == undefined || City == undefined) {
-        
-  Swal.fire({
-  
-    icon: 'warning',
-    title: 'Preecha todos os campos',
-    showConfirmButton: false,
-    timer: 1500,
+        Swal.fire({
 
-  })
+            icon: 'warning',
+            title: 'Preecha todos os campos corretamente',
+            showConfirmButton: false,
+            timer: 1500,
+
+        })
+
     } else {
+        Swal.fire({
 
-        const user = {
-            id:0,
-            name: nome,
-            email: email,
-            senha:senha,
-            uf:Uf,
-            city:City  ,
-            lastSeen: null,
-            ActivitiesAlreadyCreated:0
+            icon: 'success',
+            title: 'Cadastrado com sucesso',
+            showConfirmButton: false,
+            timer: 3000,
+        }).then(function () {
 
-        }
-        const Users = JSON.parse(window.localStorage.getItem("users"))
-         
-        if(Users == null){
-         
-            const usersArray = [user]
-            localStorage.setItem('users',JSON.stringify(usersArray));
+            var data = { nome: nome, email: email, senha: senha };
+            $.ajax({
+                dataType: "text",
+                url: 'http://localhost:5432/usuario',
+                type: "POST",
+                data: data,
+                header: { "Content-Type": "application/text"},
+            }).done(function () {
 
-            Swal.fire({
-  
-                icon: 'success',
-                title: 'Cadastrado com sucesso',
-                showConfirmButton: false,
-                timer: 3000,
-      
-              }).then(result=>{
-                window.location.href= 'login.html'
-              })
+                window.location.replace("http://127.0.0.1:5500/Codigo/procx.maven/src/main/resources/layout/login.html");
 
-            
-        }else{
-            user.id = Users.length;
-            Users.push(user)
-            localStorage.setItem('users',JSON.stringify(Users));
-            Swal.fire({
-  
-                icon: 'success',
-                title: 'Cadastrado com sucesso',
-                showConfirmButton: false,
-                timer: 1500,
-      
-              }).then(result=>{
-                window.location.href= 'login.html'
-              })
+            }).fail(function (error) {
+                console.log(error);
+            })
 
-        }
 
-        
+        })
+
     }
-
-
 }
+
 
 //let idlocal = JSON.parse(window.localStorage.getItem("idlocal"));
 // localStorage.setItem('categorias',JSON.stringify(CategoriaMae));
