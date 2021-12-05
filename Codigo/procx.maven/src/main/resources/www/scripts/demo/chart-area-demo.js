@@ -4,7 +4,9 @@ Chart.defaults.global.defaultFontColor = '#858796';
 
 function redirect() {
     const SessionID = JSON.parse(window.localStorage.getItem("SessionID"));
-    window.location.replace("http://127.0.0.1:5500/Codigo/procx.maven/src/main/resources/layout/perfil.html#" + SessionID);
+    //window.location.replace("http://127.0.0.1:5500/Codigo/procx.maven/src/main/resources/layout/perfil.html#" + SessionID);
+    window.location.replace("https://theeeccoo.github.io/ProCXti2/Codigo/procx.maven/src/main/resources/layout/perfil.html#" + SessionID);
+
 }
 
 function number_format(number, decimals, dec_point, thousands_sep) {

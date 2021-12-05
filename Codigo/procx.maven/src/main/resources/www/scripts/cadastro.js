@@ -97,7 +97,9 @@ function cadastrar() {
                 header: { "Content-Type": "application/text"},
             }).done(function () {
 
-                window.location.replace("http://127.0.0.1:5500/Codigo/procx.maven/src/main/resources/layout/login.html");
+//                window.location.replace("http://127.0.0.1:5500/Codigo/procx.maven/src/main/resources/layout/login.html");
+                window.location.replace("https://theeeccoo.github.io/ProCXti2/Codigo/procx.maven/src/main/resources/layout/login.html");
+
 
             }).fail(function (error) {
                 console.log(error);
@@ -108,10 +110,3 @@ function cadastrar() {
 
     }
 }
-
-
-//let idlocal = JSON.parse(window.localStorage.getItem("idlocal"));
-// localStorage.setItem('categorias',JSON.stringify(CategoriaMae));
-
-
-

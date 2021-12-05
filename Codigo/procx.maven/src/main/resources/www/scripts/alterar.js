@@ -1,7 +1,9 @@
 let id = location.href.split("#")[1];
 
 function redirect() {
-    window.location.replace("http://127.0.0.1:5500/Codigo/procx.maven/src/main/resources/layout/perfil.html#" + id);
+    //window.location.replace("http://127.0.0.1:5500/Codigo/procx.maven/src/main/resources/layout/perfil.html#" + id);
+    window.location.replace("https://theeeccoo.github.io/ProCXti2/Codigo/procx.maven/src/main/resources/layout/perfil.html#" + id);
+
 }
 
 function save_user(name, senha, email) {
