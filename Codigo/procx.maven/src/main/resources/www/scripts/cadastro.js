@@ -72,7 +72,13 @@ function cadastrar() {
             timer: 1500,
 
         })
-
+    } else if (nome.includes("'") || nome.includes("|") || nome.includes("&") || nome.includes("*") || nome.includes('"') || nome.includes("=") || email.includes("'") || email.includes("|") || email.includes("&") || email.includes("*") || email.includes('"') || email.includes("=") || senha.includes("'") || senha.includes("|") || senha.includes("&") || senha.includes("*") || senha.includes('"') || senha.includes("=")) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nem começa fião',
+            showConfirmButton: false,
+            timer: 1500,
+        })
     } else {
         Swal.fire({
 

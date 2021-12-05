@@ -1,6 +1,9 @@
 package dao;
 
 import java.sql.*;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import model.*;
 
@@ -56,8 +59,9 @@ public class ProcxDao {
     // =============================================================================================================================================================== //
 
     // "USUARIO" CRUD: //
-	public boolean inserirUsuario(Usuario usuario) {
+	public boolean inserirUsuario(Usuario usuario) throws NoSuchAlgorithmException, UnsupportedEncodingException{
 		boolean status = false;
+
 		try {
 			Statement st = conexao.createStatement();
 			st.executeUpdate("INSERT INTO usuario (dataLogin, email, idUsuario, nome, senha)"
@@ -129,13 +133,13 @@ public class ProcxDao {
 		return usuarios;
 	}
 	
-	public Usuario getUsuario(String email) {
+	public Usuario getUsuario(String email, String senha) {
 		Usuario user1 = null;
 
 		
 		try {
 			Statement st = conexao.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-			ResultSet rs = st.executeQuery("SELECT * FROM usuario WHERE email = '"+ email +"'");
+			ResultSet rs = st.executeQuery("SELECT * FROM usuario WHERE email = '"+ email +"' AND senha = '" + senha + "'");
 
 			if(rs.next()) {
 				rs.last();
@@ -279,8 +283,32 @@ public class ProcxDao {
 		return ativ1;
 	}	
 	
-	public int getMaxIDAtiv(int idUSUARIO) {
-		Atividade[] atividades = getAtividades(idUSUARIO);
+	public Atividade[] getTodasAtividades() {
+		Atividade[] atividade = null;
+		try {
+			Statement st = conexao.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			ResultSet rs = st.executeQuery("SELECT * FROM atividade");
+	         if(rs.next()){
+	             rs.last();
+	             atividade = new Atividade[rs.getRow()];
+	             rs.beforeFirst();
+	             
+	             for(int i = 0; rs.next(); i++) {
+	                atividade[i] = new Atividade(rs.getString("descricao"), rs.getBoolean("estado_Atividade"), 
+		                                  rs.getString("horario"), rs.getInt("idAtividade"), 
+		                                  rs.getInt("idUsuario"), rs.getString("nome"));// rs.getDate("dataVal").toLocalDate());
+
+	             }
+	          }
+	          st.close();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		return atividade;
+	}
+	
+	public int getMaxIDAtiv() {
+		Atividade[] atividades = getTodasAtividades();
 		
 		int id = 0;
 		if(atividades != null) {

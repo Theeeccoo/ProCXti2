@@ -4,6 +4,9 @@
 package service;
 
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -36,7 +39,7 @@ public class Service {
 	// ======================================================================================================================= //
 	
 	// CRUD USUARIO //
-	public Object addUsuario(Request request, Response response) {
+	public Object addUsuario(Request request, Response response) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		response.header("Content-Type", "application/json");
 		response.header("Access-Control-Allow-Origin", "*");
 		response.header("Access-Control-Allow-Methods", "POST, GET");
@@ -48,13 +51,15 @@ public class Service {
 		String nome = request.queryParams("nome");
 		String email = request.queryParams("email");
 		String senha = request.queryParams("senha");
+		MessageDigest algorithm = MessageDigest.getInstance("MD5");
+		byte messageDigest[] = algorithm.digest(senha.getBytes("UTF-8"));
 
-		
+		String senhaCriptografada = new String(messageDigest, "UTF-8");
 		int id = procxDao.getMaxIDUser() + 1;
 
 		LocalDateTime lt = LocalDateTime.now();
 		
-		Usuario usuario = new Usuario(id, email, nome, senha, lt);
+		Usuario usuario = new Usuario(id, email, nome, senhaCriptografada, lt);
 		procxDao.inserirUsuario(usuario);
 		
 		response.status(201); // Created
@@ -62,12 +67,15 @@ public class Service {
 		return id;
 	}
 	
-	public Object getUsuarioByEmail(Request request, Response response) {
+	public Object getUsuarioByEmail(Request request, Response response) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		String email = request.params(":email");
+		String senha = request.queryParams("senha");
+		MessageDigest algorithm = MessageDigest.getInstance("MD5");
+		byte messageDigest[] = algorithm.digest(senha.getBytes("UTF-8"));
 
+		String senhaCriptografada = new String(messageDigest, "UTF-8");
 		
-		Usuario user = (Usuario) procxDao.getUsuario(email);
-	
+		Usuario user = (Usuario) procxDao.getUsuario(email, senhaCriptografada);
 		if(user != null) {
 			response.header("Content-Type", "application/json");
 			response.header("Access-Control-Allow-Origin", "*");
@@ -142,7 +150,7 @@ public class Service {
 		}
 	}
 	
-	public Object updateUsuario(Request request, Response response) {
+	public Object updateUsuario(Request request, Response response) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		int id = Integer.parseInt(request.params(":id"));
 		
 		Usuario usuario = (Usuario) procxDao.getUsuarioById(id);
@@ -157,7 +165,12 @@ public class Service {
 			usuario.setDataLogin(LocalDateTime.now());
 			usuario.setEmail(request.queryParams("email"));
 	       	usuario.setNome(request.queryParams("nome"));
-        	usuario.setSenha(request.queryParams("senha"));
+			String senha = request.queryParams("senha");
+			MessageDigest algorithm = MessageDigest.getInstance("MD5");
+			byte messageDigest[] = algorithm.digest(senha.getBytes("UTF-8"));
+
+			String senhaCriptografada = new String(messageDigest, "UTF-8");
+        	usuario.setSenha(senhaCriptografada);
 			        	
         	procxDao.atualizarUsuario(usuario);
         	return id;
@@ -170,7 +183,7 @@ public class Service {
 	public Object removeUsuario(Request request, Response response) {
 		int id = Integer.parseInt(request.params(":id"));
 
-		Usuario usuario = (Usuario) procxDao.getUsuario("A");
+		Usuario usuario = (Usuario) procxDao.getUsuario("A", "B");
 
 		if(usuario != null) {
 			procxDao.excluirUsuario(usuario.getId());
@@ -222,7 +235,7 @@ public class Service {
 		String horario = request.queryParams("horario");
 		String nome = request.queryParams("nome");
 		
-		int id = procxDao.getMaxIDAtiv(idUsuario) + 1;
+		int id = procxDao.getMaxIDAtiv() + 1;
 
 
 		boolean estado_Atividade = false;

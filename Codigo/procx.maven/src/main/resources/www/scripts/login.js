@@ -12,8 +12,15 @@ function login(){
             showConfirmButton: false,
             timer: 1500,
         })
+    } else if (email.includes("'") || email.includes("|") || email.includes("&") || email.includes("*") || email.includes('"') || email.includes("=") || senha.includes("'") || senha.includes("|") || senha.includes("&") || senha.includes("*") || senha.includes('"') || senha.includes("=")){
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nem começa fião',
+            showConfirmButton: false,
+            timer: 1500,
+        })
     }else{
-        var dados = {email: email};
+        var dados = {senha: senha};
         url = 'http://localhost:5432/usuario/' + email;
 
         $.ajax({
@@ -30,7 +37,7 @@ function login(){
             userData = JSON.parse(data);
             
 
-            if(userData.senha != senha){
+            if(userData.senha == null){
                 Swal.fire({
                     icon: 'error',
                     title: 'Email ou senha errados',
@@ -60,7 +67,6 @@ function login(){
                         header: { "Content-Type": "application/text" },
 
                     }).done(function(){
-
                         window.location.replace("http://127.0.0.1:5500/Codigo/procx.maven/src/main/resources/layout/perfil.html#" + userData.id);
 
 

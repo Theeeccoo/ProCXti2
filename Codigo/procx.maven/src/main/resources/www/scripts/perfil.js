@@ -16,9 +16,7 @@ function redirect() {
 
 
 function ValidarSession() {
-
-
-    if (SessionID == null) {
+    if (SessionID != parseInt(id)) {
         Swal.fire({
 
             icon: 'error',
@@ -365,8 +363,6 @@ function deletarAtividade(idAtiv, idUSUARIO) {
         header: { "Content-Type": "application/text" },
     }).done(function (data) {
         var atividade = JSON.parse(data);
-        console.log(atividade.id);
-        console.log(atividade);
         var dados = { id: atividade.id };
         urlUpdate = `http://localhost:5432/deleteAtividade/${atividade.idUsuario}`;
         $.ajax({
@@ -407,8 +403,14 @@ function editarAtividade() {
             timer: 1500,
 
         })
-    }
-    else {
+    } else if (nome.includes("'") || nome.includes("|") || nome.includes("&") || nome.includes("*") || nome.includes('"') || nome.includes("=") || descricao.includes("'") || descricao.includes("|") || descricao.includes("&") || descricao.includes("*") || descricao.includes('"') || descricao.includes("=")) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nem começa fião',
+            showConfirmButton: false,
+            timer: 1500,
+        })
+    } else {
         var urlAtiv = `http://localhost:5432/getAtividade/${id}`;
 
         // REQUISICAO ATIV
@@ -509,6 +511,13 @@ function criarAtividades() {
         })
 
 
+    } else if (nome.includes("'") || nome.includes("|") || nome.includes("&") || nome.includes("*") || nome.includes('"') || nome.includes("=") || descricao.includes("'") || descricao.includes("|") || descricao.includes("&") || descricao.includes("*") || descricao.includes('"') || descricao.includes("=")) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nem começa fião',
+            showConfirmButton: false,
+            timer: 1500,
+        })
     }
     else {
         var urlAtiv = `http://localhost:5432/createAtividade/${id}`;
@@ -522,7 +531,6 @@ function criarAtividades() {
             data: dados,
             header: { "Content-Type": "application/text" },
         }).done(function (data) {
-            console.log(data);
             sucesso('criada');
         })
     }
@@ -535,7 +543,6 @@ function logoff() {
 // Função que adicionará o "Card" de recompensa à tela
 function criarRecompensa() {
     let recompensa = document.getElementById('txt_nome_recomp').value; // Variável que receberá o valor digitado pelo usuário
-    console.log(recompensa);
     const recompensaArea = document.getElementById('box-recompensa'); // Variável responsável pela div 
     if (recompensa == '') { // Caso input vazio, "SWAL" de: preencha os campos
         Swal.fire({
@@ -547,7 +554,6 @@ function criarRecompensa() {
 
         })
     } else { // Do contrário, preencha com o valor dado pelo usuário
-        console.log(id);
         var ulrRecomp = `http://localhost:5432/createRecompensa/${id}`;
 
         // REQUISICAO ATIV
@@ -607,7 +613,6 @@ function mostrarRecompensa() {
             if (recompensaArea != null) {
                 recompensaArea.style.opacity = "1";
                 document.getElementById('checagem').disabled = false;
-                console.log("AAAB");
             }
         } else {
             if (recompensaArea != null) {
